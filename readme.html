@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-07-14 Thu 00:22 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Python Fundamentals</title>
+<meta name="author" content="Alberto Valdez" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://albertov5.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://albertov5.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://albertov5.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://albertov5.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Python Fundamentals</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgb3783d6">Introduction</a></li>
+<li><a href="#org1e53c2e">Terminal and bash</a>
+<ul>
+<li><a href="#org7d59852">Useful commands</a>
+<ul>
+<li><a href="#org8c59fc0">Print working directory</a></li>
+<li><a href="#org771bdf7">List directory</a></li>
+<li><a href="#org8e3e8fc">Change directory</a></li>
+</ul>
+</li>
+<li><a href="#orgf047756">Navigating with the Terminal Example</a></li>
+</ul>
+</li>
+<li><a href="#org0f940c2">Git</a>
+<ul>
+<li><a href="#org66dbe90">Installing homebrew</a></li>
+<li><a href="#orga6e9ba1">Installing git</a></li>
+<li><a href="#org0a8d87b">Checking versions</a></li>
+</ul>
+</li>
+<li><a href="#org247428b">Python</a>
+<ul>
+<li><a href="#org414d41a">Python versions - End of life</a></li>
+</ul>
+</li>
+<li><a href="#org3e08a82">VS Code and GitHub</a></li>
+<li><a href="#orgdd0b813">Working with Python files</a></li>
+</ul>
+</div>
+</div>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><a href="https://albertov5.github.io/tec-data/index.html">&lt;&lt;&lt;Home</a></td>
+<td class="org-left"><a href="./lesson-1.html">Lesson-1</a></td>
+<td class="org-left"><a href="./lesson-2.html">Lesson-2</a></td>
+<td class="org-left"><a href="./challenge/readme.html">Challenge&gt;&gt;</a></td>
+</tr>
+</tbody>
+</table>
+
+<div id="outline-container-orgb3783d6" class="outline-2">
+<h2 id="orgb3783d6">Introduction</h2>
+<div class="outline-text-2" id="text-orgb3783d6">
+<p>
+Python is one of the most popular languages in the world, used in many industries to accomplish different goals. It&rsquo;s very easy to use, as you can focus on the problem and not the intricacies of the language.
+</p>
+
+<p>
+Here is a YouTube playlist of keynotes that I&rsquo;ve collected over the past month while practicing and studying Python:
+</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLdswL3Tb01gznKrZf0_XeOc6ftUO3yZhn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<hr />
+</div>
+</div>
+<div id="outline-container-org1e53c2e" class="outline-2">
+<h2 id="org1e53c2e">Terminal and bash</h2>
+<div class="outline-text-2" id="text-org1e53c2e">
+</div>
+<div id="outline-container-org7d59852" class="outline-3">
+<h3 id="org7d59852">Useful commands</h3>
+<div class="outline-text-3" id="text-org7d59852">
+</div>
+<div id="outline-container-org8c59fc0" class="outline-4">
+<h4 id="org8c59fc0">Print working directory</h4>
+<div class="outline-text-4" id="text-org8c59fc0">
+<div class="org-src-container">
+<pre class="src src-shell" id="orgd701150"><span style="color: #33CCAA;">pwd</span>
+</pre>
+</div>
+
+<pre class="example" id="org3781bce">
+/Users/albertovaldez/tec-data/tec-data-03-python
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org771bdf7" class="outline-4">
+<h4 id="org771bdf7">List directory</h4>
+<div class="outline-text-4" id="text-org771bdf7">
+<div class="org-src-container">
+<pre class="src src-shell" id="orgb7fe79f"><span style="color: #33CCAA;">ls</span>
+</pre>
+</div>
+
+<pre class="example" id="org1210bd8">
+challenge
+index.html
+lesson-1.html
+lesson-1.md
+lesson-1.org
+lesson-2.html
+lesson-2.md
+lesson-2.org
+material
+publish.inc
+readme.html
+readme.md
+readme.org
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org8e3e8fc" class="outline-4">
+<h4 id="org8e3e8fc">Change directory</h4>
+<div class="outline-text-4" id="text-org8e3e8fc">
+<div class="org-src-container">
+<pre class="src src-shell" id="orgd11f205"><span style="color: #33CCAA;">cd</span> $<span style="color: #a9dbfa;">path</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf047756" class="outline-3">
+<h3 id="orgf047756">Navigating with the Terminal Example</h3>
+<div class="outline-text-3" id="text-orgf047756">
+<p>
+First let&rsquo;s call <code>ls</code> to see the contents of the current directory.
+Then let&rsquo;s move into the lesson-1 folder and check if we are actually in that directory with <code>cd lesson-1 &amp;&amp; pwd</code>.
+The <code>&amp;&amp;</code> operator will help us run commands sequentially.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell" id="org686b289"><span style="color: #33CCAA;">ls</span>
+<span style="color: #33CCAA;">cd</span> lesson-1 &amp;&amp; <span style="color: #33CCAA;">pwd</span>
+<span style="color: #33CCAA;">cd</span> ..
+</pre>
+</div>
+
+<pre class="example" id="org69ef6a4">
+challenge
+index.html
+lesson-1.html
+lesson-1.md
+lesson-1.org
+lesson-2.html
+lesson-2.md
+lesson-2.org
+material
+publish.inc
+readme.html
+readme.md
+readme.org
+</pre>
+
+<p>
+Use <code>cd ..</code> to navigate to the top directory.
+Use <code>cd ../week-1</code> to navigate to a directory named &ldquo;week-1&rdquo; in the top directory.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0f940c2" class="outline-2">
+<h2 id="org0f940c2">Git</h2>
+<div class="outline-text-2" id="text-org0f940c2">
+<p>
+Version control tool that will allow us to interact with GitHub from the Terminal.
+</p>
+</div>
+
+<div id="outline-container-org66dbe90" class="outline-3">
+<h3 id="org66dbe90">Installing homebrew</h3>
+<div class="outline-text-3" id="text-org66dbe90">
+<p>
+<code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga6e9ba1" class="outline-3">
+<h3 id="orga6e9ba1">Installing git</h3>
+<div class="outline-text-3" id="text-orga6e9ba1">
+<p>
+<code>brew install git</code>
+</p>
+
+<p>
+<code>brew install git-lfs</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0a8d87b" class="outline-3">
+<h3 id="org0a8d87b">Checking versions</h3>
+<div class="outline-text-3" id="text-org0a8d87b">
+<div class="org-src-container">
+<pre class="src src-shell" id="org9b71b00"><span style="color: #33CCAA;">git</span> --version
+</pre>
+</div>
+<pre class="example" id="org671f0bf">
+git version 2.24.3 (Apple Git-128)
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-shell" id="orgb6a1741">git-lfs --version
+</pre>
+</div>
+<pre class="example" id="orgb56bcc6">
+git-lfs/3.2.0 (GitHub; darwin amd64; go 1.18.2)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org247428b" class="outline-2">
+<h2 id="org247428b">Python</h2>
+<div class="outline-text-2" id="text-org247428b">
+<p>
+We will be using <code>Python 3.7.13</code>. In my case I&rsquo;ll install it using pyenv with <code>pyenv install</code> <code>3.7.13</code>.
+</p>
+
+<p>
+I&rsquo;ll activate the environment with <code>pyenv local</code> <code>3.7.13</code> which will tell python to use <code>Python 3.7.13</code> whenever I execute it in this directory: <code>/Users/albertovaldez/tec-data/tec-data-03-python</code>.
+</p>
+
+<p>
+We can check the version with:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell" id="orged687cc">python --version
+</pre>
+</div>
+<pre class="example" id="orga218ea3">
+Python 3.7.13
+</pre>
+
+<p>
+We can run Python from the terminal with:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell" id="orgeeb739e">python
+</pre>
+</div>
+
+<p>
+Let&rsquo;s try to use the current environment.
+</p>
+<div class="org-src-container">
+<pre class="src src-python" id="org29031ff"><span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"Hello World!"</span>)
+</pre>
+</div>
+
+<pre class="example">
+Hello World!
+</pre>
+</div>
+
+<div id="outline-container-org414d41a" class="outline-3">
+<h3 id="org414d41a">Python versions - End of life</h3>
+<div class="outline-text-3" id="text-org414d41a">
+<p>
+<a href="https://endoflife.date/python">End of life</a> is a website that shows the dates of when a Python version is not longer receiving security updates. For example:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Version</th>
+<th scope="col" class="org-left">Released</th>
+<th scope="col" class="org-left">End of life</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">3.7</td>
+<td class="org-left">26 Jun 2018</td>
+<td class="org-left">27 Jun 2023</td>
+</tr>
+
+<tr>
+<td class="org-right">2.7</td>
+<td class="org-left">03 Jul 2020</td>
+<td class="org-left">01 Jan 2020</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The Python version is best chosen depending on the libraries you are planning on using, and most of the time the better supported versions are the ones released 2+ years ago.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org3e08a82" class="outline-2">
+<h2 id="org3e08a82">VS Code and GitHub</h2>
+<div class="outline-text-2" id="text-org3e08a82">
+<p>
+I use VS Code for working on development but for journaling/studying purposes I am using Emacs with org-mode as it let&rsquo;s me publish to HTML and Markdown while I interact with code blocks in a document wide session.
+</p>
+
+<p>
+This is my GitHub account: <code>https://github.com/albertov5/</code>.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgdd0b813" class="outline-2">
+<h2 id="orgdd0b813">Working with Python files</h2>
+<div class="outline-text-2" id="text-orgdd0b813">
+<p>
+I&rsquo;m making sure my working directory is <code>/Users/albertovaldez/tec-data/tec-data-03-python</code> and then I&rsquo;ll open VS Code with <code>code .</code>. All new python files for this week will live in this directory.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Alberto Valdez</p>
+<p class="date">Created: 2022-07-14 Thu 00:22</p>
+</div>
+</body>
+</html>
