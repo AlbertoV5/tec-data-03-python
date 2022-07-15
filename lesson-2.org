@@ -1,12 +1,339 @@
-#+title:    Lesson-2
+#+title:    Python Logic and Files
 #+author:   Alberto Valdez
 #+email:    avq5ac1@gmail.com
 #+SETUPFILE: https://albertov5.github.io/org-html-themes/org/theme-readtheorg.setup
-#+OPTIONS: num:nil
 #+PROPERTY: header-args :mkdirp yes :dir . :exports both
-#+PROPERTY: header-args:shell :results drawer :wrap example :results silent
-#+PROPERTY: header-args:python :exports both :results output replace
+#+PROPERTY: header-args:shell :results value org :results silent
+#+PROPERTY: header-args:python :exports both :results value org output replace
 
-| [[./readme.org][<<Back]] | [[./lesson-1.org][Lesson-1]] | [[./material.org][Material]] | [[./challenge/readme.org][Challenge>>]] |
+| [[./readme.org][<<Back]] |
 
-* Content
+Notes taken during class.
+
+* Conditional Statements
+
+Python requires indentation after the =:= operator, which means "this is a block of code". So we can nest blocks with indentation.
+#+begin_src python
+x = 1
+if x == 1:
+    print("x is equal to 1")
+else:
+    print("x is greater than 1")
+#+end_src
+
+#+RESULTS:
+: x is equal to 1
+
+Most editors will render tabs as 4 spaces, most allow you to edit that setting.
+
+** Logical Operators
+#+begin_src python
+x = 1
+y = 10
+if x == 1 and y == 10:
+    print("Both values are true.")
+if x < 45 or y < 45:
+    print("One or more statements are true.")
+#+end_src
+
+#+RESULTS:
+: Both values are true.
+: One or more statements are true.
+
+** Nested and Elif
+These are the possible ways to evaluate logic in Python:
+
+| If | Elif | Else |
+
+You can have as many =Elif= instances as you want. You can check out the comparison operators in the python documentation. [fn:1]
+
+#+begin_src python
+height = 66
+age = 16
+adult_permission = True
+if (height > 70) and (age >= 18):
+    print("Can ride all the roller coasters")
+elif (height > 65) and (age >= 18):
+    print("Can ride moderate roller coasters")
+elif (height > 60) and (age >= 18):
+    print("Can ride light roller coasters")
+elif ((height > 50) and (age >= 18)) or ((adult_permission) and (height > 50)):
+    print("Can ride bumper cars")
+else:
+    print("Stick to lazy river")
+#+end_src
+
+#+RESULTS:
+: Can ride bumper cars
+
+** Logical Matrices
+
+| AND | T | F |
+| T   | T | F |
+| F   | F | F |
+
+| OR | T | F |
+| T  | T | T |
+| F  | T | F |
+
+=False= AND =anything= will always be =False=.
+
+=True= AND =anything= will always be =True=.
+
+* Activity Rock, Paper Scissors.
+
+Let's play rock, paper scissors!
+
+Assumming that.
+#+begin_src python :results silent
+computer_choice = "r"
+user_choice = "r"
+#+end_src
+
+Then we can use this nested conditional.
+#+NAME: play_rps
+#+begin_src python :var user_choice = "r" computer_choice = "r"
+print("Let's Play Rock Paper Scissors!")
+options = ["r", "p", "s"]
+
+if user_choice == "r":
+    if computer_choice == "r":
+        print("We Tie.")
+    elif computer_choice == "p":
+        print("You loose!")
+    elif computer_choice == "s":
+        print("You win!")
+elif user_choice == "p":
+    if computer_choice == "r":
+        print("You win!")
+    elif computer_choice == "p":
+        print("We Tie.")
+    elif computer_choice == "s":
+        print("You loose!")
+elif user_choice == "s":
+    if computer_choice == "r":
+        print("You loose!")
+    elif computer_choice == "p":
+        print("You win!")
+    elif computer_choice == "s":
+        print("We tie!")
+else:
+    print("Pick a valid choice!")
+
+print(f"You chose {user_choice}. I chose {computer_choice}.")
+#+end_src
+
+#+RESULTS: play_rps
+: Let's Play Rock Paper Scissors!
+: We Tie.
+: You chose r. I chose r.
+
+If we pick ="p"= and computer picks ="s"=.
+#+CALL: play_rps(user_choice = "p", computer_choice = "s")
+
+#+RESULTS:
+: Let's Play Rock Paper Scissors!
+: You loose!
+: You chose p. I chose s.
+
+If we pick ="s"= and computer picks ="p"=.
+#+CALL: play_rps(user_choice = "s", computer_choice = "p")
+
+#+RESULTS:
+: Let's Play Rock Paper Scissors!
+: You win!
+: You chose s. I chose p.
+
+
+* Loops
+
+Python will only iterate over a list, so we can generate one list on the fly. Using the =range= keyword.
+#+begin_src python
+for i in range(4):
+    print(i)
+#+end_src
+
+#+RESULTS:
+: 0
+: 1
+: 2
+: 3
+
+Or we can use our own list.
+#+begin_src python
+person_list = ["Alex", "Bob", "Alice"]
+for person in person_list:
+    print(person)
+#+end_src
+
+#+RESULTS:
+: Alex
+: Bob
+: Alice
+
+Python also supports While loops, which will keep running forever unless we stop it with one condition.
+#+begin_src python
+run = 0
+while run < 3:
+    print(f"run! {run}")
+    run = run + 1
+#+end_src
+
+#+RESULTS:
+: run! 0
+: run! 1
+: run! 2
+
+* Activity Number Chain
+
+Let's assume we can start with these values.
+#+begin_src python :results silent
+user_play = "y"
+saved_number = 0
+user_number = 3
+#+end_src
+
+Then we can run the code.
+#+NAME: number_chain
+#+begin_src python :var user_play = "y" user_number = 3  saved_number = 0
+while user_play == "y":
+    for i in range(1, user_number + 1):
+        print(f"{i + saved_number}")
+    saved_number = saved_number + user_number
+    user_play = "n"
+#+end_src
+
+#+RESULTS: number_chain
+: 1
+: 2
+: 3
+
+Let's then assume we give it an input of =6=.
+#+CALL: number_chain(user_play = "y", user_number = 6, saved_number = 3)
+
+#+RESULTS:
+: 4
+: 5
+: 6
+: 7
+: 8
+: 9
+
+We were able to continue the sequence because we stored the last number in the =saved_number= variable. We can do it one last time for the value of =5=.
+
+#+CALL: number_chain(user_play = "y", user_number = 5, saved_number = 9)
+
+#+RESULTS:
+: 10
+: 11
+: 12
+: 13
+: 14
+
+* Reading and Writing Files
+
+Let's move to the working directory.
+#+begin_src shell :results output replace
+cd ./material/3-2-Student-Resources/09-Evr_WritingNetflixData
+echo "---this is the path---"
+pwd
+echo "---these are the files in the path---"
+ls
+#+end_src
+
+#+RESULTS:
+#+begin_example
+---this is the path---
+/Users/albertovaldez/tec-data/tec-data-03-python/material/3-2-Student-Resources/09-Evr_WritingNetflixData
+---these are the files in the path---
+README.md
+Resources
+Unsolved
+output
+solved_write_netflix.py
+#+end_example
+
+Let's assume we are looking for this video.
+#+begin_src python :results silent
+video = "Breaking Bad"
+#+end_src
+
+We need to iterate over the rows of the file, the structure is something like:
+
+=csvreader[rows[columns]]=
+
+So we need a for loop and then use =[0]= to index the first column, which will be the "title", as our file looks like:
+
+| title        | rating | ratinglevel            | etc... |
+|--------------+--------+------------------------+--------|
+| White Chicks | PG-13  | "crude and humour"     | etc... |
+| Breaking Bad | TV-MA  | "For mature audiences" | etc... |
+| etc...       | etc... | etc...                 | etc... |
+
+Let's use the =os= and =csv= modules in order to both read and write the files.
+#+NAME: search_video
+#+begin_src python :var video = "Breaking Bad" :dir ./material/3-2-Student-Resources/09-Evr_WritingNetflixData
+import os
+import csv
+
+csvpath = os.path.join("resources", "netflix_ratings.csv")
+outputpath = os.path.join("output", "video_result.txt")
+found = False
+
+with open(csvpath, newline="") as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=",")
+    for row in csvreader:
+        if row[0] == video:
+            found = True
+            with open(outputpath, "a") as textfile:
+                # title, rating, ratinglevel
+                contents = f"Title: {row[0]}, Rating Level: {row[1]} ({row[2]})\n"
+                textfile.write(contents)
+                print(contents)
+            break
+    if found is False:
+        print("Sorry about this, we don't seem to have what you are looking for!")
+#+end_src
+
+#+RESULTS: search_video
+: Title: Breaking Bad, Rating Level: TV-MA (For mature audiences.  May not be suitable for children 17 and under.)
+
+Then our output file will look like this:
+
+#+begin_src shell :results output replace :dir ./material/3-2-Student-Resources/09-Evr_WritingNetflixData
+cat output/video_result.txt
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Title: Breaking Bad, Rating Level: TV-MA (For mature audiences.  May not be suitable for children 17 and under.)
+#+end_example
+
+Now let's try to find it using =video = Scream=.
+#+CALL: search_video(video = "Scream") :dir ./material/3-2-Student-Resources/09-Evr_WritingNetflixData
+
+#+RESULTS:
+: Title: Scream, Rating Level: TV-14 (Parents strongly cautioned. May be unsuitable for children ages 14 and under.)
+
+Let's take a look at the file again.
+#+begin_src shell :results output replace :dir ./material/3-2-Student-Resources/09-Evr_WritingNetflixData
+cat output/video_result.txt
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Title: Scream, Rating Level: TV-14 (Parents strongly cautioned. May be unsuitable for children ages 14 and under.)
+#+end_example
+
+Extra tip: We can empty the .txt file with this command.
+#+begin_src shell :dir ./material/3-2-Student-Resources/09-Evr_WritingNetflixData
+> output/video_result.txt
+#+end_src
+
+* Office hours.
+
+Make sure you are in the right directory!
+
+* Footnotes
+
+[fn:1]https://docs.python.org/3/reference/expressions.html#comparisons

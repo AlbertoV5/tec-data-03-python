@@ -7,7 +7,7 @@
 #+PROPERTY: header-args:shell :results drawer :wrap example :results silent
 #+PROPERTY: header-args:python :exports both :results output replace
 
-| [[./index.org][<<Back]] | [[./lesson-2.org][Lesson-2]] | [[./material.org][Material]] | [[./challenge/readme.org][Challenge>>]] |
+| [[./readme.org][<<Back]] |
 
 These notes are taken during the class.
 

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-07-14 Thu 00:24 -->
+<!-- 2022-07-14 Thu 22:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python Basics and Data Structures</title>
@@ -23,31 +23,31 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4744514">Introduction</a></li>
-<li><a href="#orgb38f371">Terminal commands</a></li>
-<li><a href="#orgb617f79">Python</a>
+<li><a href="#org5a3c24b">Introduction</a></li>
+<li><a href="#org0942bf1">Terminal commands</a></li>
+<li><a href="#orgf726c33">Python</a>
 <ul>
-<li><a href="#org9bc7a41">Variables</a></li>
-<li><a href="#org98901ac">Variables Activity</a></li>
+<li><a href="#orgab6a841">Variables</a></li>
+<li><a href="#org90cb1a4">Variables Activity</a></li>
 </ul>
 </li>
-<li><a href="#orgcd3219e">Data Structures</a>
+<li><a href="#orga2d10ca">Data Structures</a>
 <ul>
-<li><a href="#org1daa7aa">Lists</a></li>
-<li><a href="#orge7a580d">Tuples</a></li>
-<li><a href="#org91ecb40">Activity - Groceries</a></li>
-<li><a href="#org1ea8fad">Dictionaries</a></li>
-<li><a href="#org4619d80">Activity - Pet Hobbies</a></li>
+<li><a href="#org4924854">Lists</a></li>
+<li><a href="#orge2b7f70">Tuples</a></li>
+<li><a href="#org772461a">Activity - Groceries</a></li>
+<li><a href="#org84bf468">Dictionaries</a></li>
+<li><a href="#org0ecd23e">Activity - Pet Hobbies</a></li>
 </ul>
 </li>
-<li><a href="#org54cc09a">Office hours</a>
+<li><a href="#orgc3ae3ed">Office hours</a>
 <ul>
-<li><a href="#orga2fadb0">When to use [] or {} or ()?</a></li>
-<li><a href="#org5571091">What is Anaconda, IDLE, VS Code?</a></li>
-<li><a href="#org21df61d">Can we use <code>my_list.index()</code> instead of accessing it with <code>[i]</code>?</a></li>
-<li><a href="#org517aef1">Can we work with Python 3.10 or other version that is not 3.7?</a></li>
-<li><a href="#orgd378929">How to know if we have Python installed?</a></li>
-<li><a href="#orgf5c4c3f">Do we need to change directory for executing python code?</a></li>
+<li><a href="#org4de5594">When to use [] or {} or ()?</a></li>
+<li><a href="#orgc691434">What is Anaconda, IDLE, VS Code?</a></li>
+<li><a href="#org66779d6">Can we use <code>my_list.index()</code> instead of accessing it with <code>[i]</code>?</a></li>
+<li><a href="#orge5e5394">Can we work with Python 3.10 or other version that is not 3.7?</a></li>
+<li><a href="#org83d357a">How to know if we have Python installed?</a></li>
+<li><a href="#org85ab979">Do we need to change directory for executing python code?</a></li>
 </ul>
 </li>
 </ul>
@@ -58,19 +58,10 @@
 
 <colgroup>
 <col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
 </colgroup>
 <tbody>
 <tr>
-<td class="org-left"><a href="./index.html">&lt;&lt;Back</a></td>
-<td class="org-left"><a href="./lesson-2.html">Lesson-2</a></td>
-<td class="org-left"><a href="./material.html">Material</a></td>
-<td class="org-left"><a href="./challenge/readme.html">Challenge&gt;&gt;</a></td>
+<td class="org-left"><a href="./readme.html">&lt;&lt;Back</a></td>
 </tr>
 </tbody>
 </table>
@@ -79,15 +70,15 @@
 These notes are taken during the class.
 </p>
 
-<div id="outline-container-org4744514" class="outline-2">
-<h2 id="org4744514">Introduction</h2>
-<div class="outline-text-2" id="text-org4744514">
+<div id="outline-container-org5a3c24b" class="outline-2">
+<h2 id="org5a3c24b">Introduction</h2>
+<div class="outline-text-2" id="text-org5a3c24b">
 <div class="org-src-container">
-<pre class="src src-shell" id="org53959a5">python --version
+<pre class="src src-shell" id="org41af36d">python --version
 </pre>
 </div>
 
-<pre class="example" id="org2aa5921">
+<pre class="example" id="orgcda64ee">
 Python 3.7.13
 </pre>
 
@@ -119,9 +110,9 @@ Recommendations:
 </div>
 </div>
 
-<div id="outline-container-orgb38f371" class="outline-2">
-<h2 id="orgb38f371">Terminal commands</h2>
-<div class="outline-text-2" id="text-orgb38f371">
+<div id="outline-container-org0942bf1" class="outline-2">
+<h2 id="org0942bf1">Terminal commands</h2>
+<div class="outline-text-2" id="text-org0942bf1">
 <p>
 List of useful terminal commands:
 </p>
@@ -149,13 +140,13 @@ clear
 </div>
 </div>
 
-<div id="outline-container-orgb617f79" class="outline-2">
-<h2 id="orgb617f79">Python</h2>
-<div class="outline-text-2" id="text-orgb617f79">
+<div id="outline-container-orgf726c33" class="outline-2">
+<h2 id="orgf726c33">Python</h2>
+<div class="outline-text-2" id="text-orgf726c33">
 </div>
-<div id="outline-container-org9bc7a41" class="outline-3">
-<h3 id="org9bc7a41">Variables</h3>
-<div class="outline-text-3" id="text-org9bc7a41">
+<div id="outline-container-orgab6a841" class="outline-3">
+<h3 id="orgab6a841">Variables</h3>
+<div class="outline-text-3" id="text-orgab6a841">
 <p>
 Declaring variables.
 </p>
@@ -179,9 +170,9 @@ Current year is 2022, Carlos is a doctor. Is Galo an expert? True
 </div>
 </div>
 
-<div id="outline-container-org98901ac" class="outline-3">
-<h3 id="org98901ac">Variables Activity</h3>
-<div class="outline-text-3" id="text-org98901ac">
+<div id="outline-container-org90cb1a4" class="outline-3">
+<h3 id="org90cb1a4">Variables Activity</h3>
+<div class="outline-text-3" id="text-org90cb1a4">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #559944;"># </span><span style="color: #559944;">Create a variable called 'name' that holds a string</span>
 <span style="color: #a9dbfa;">name</span> = <span style="color: #c5937c;">"Alberto"</span>
@@ -219,13 +210,13 @@ True
 </div>
 </div>
 
-<div id="outline-container-orgcd3219e" class="outline-2">
-<h2 id="orgcd3219e">Data Structures</h2>
-<div class="outline-text-2" id="text-orgcd3219e">
+<div id="outline-container-orga2d10ca" class="outline-2">
+<h2 id="orga2d10ca">Data Structures</h2>
+<div class="outline-text-2" id="text-orga2d10ca">
 </div>
-<div id="outline-container-org1daa7aa" class="outline-3">
-<h3 id="org1daa7aa">Lists</h3>
-<div class="outline-text-3" id="text-org1daa7aa">
+<div id="outline-container-org4924854" class="outline-3">
+<h3 id="org4924854">Lists</h3>
+<div class="outline-text-3" id="text-org4924854">
 <p>
 Arrays, a way to organize data in a contiguous place. Lists can hold multiple data types, strings, integers, boolean, etc.
 Lists in python are zero-based (index starts at zero).
@@ -263,9 +254,9 @@ Length of my list: 4
 </div>
 </div>
 
-<div id="outline-container-orge7a580d" class="outline-3">
-<h3 id="orge7a580d">Tuples</h3>
-<div class="outline-text-3" id="text-orge7a580d">
+<div id="outline-container-orge2b7f70" class="outline-3">
+<h3 id="orge2b7f70">Tuples</h3>
+<div class="outline-text-3" id="text-orge2b7f70">
 <p>
 Tuples are immutable lists (you can&rsquo;t modify them).
 </p>
@@ -285,9 +276,9 @@ new_tuple is (0, 3)
 </div>
 </div>
 
-<div id="outline-container-org91ecb40" class="outline-3">
-<h3 id="org91ecb40">Activity - Groceries</h3>
-<div class="outline-text-3" id="text-org91ecb40">
+<div id="outline-container-org772461a" class="outline-3">
+<h3 id="org772461a">Activity - Groceries</h3>
+<div class="outline-text-3" id="text-org772461a">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #559944;"># </span><span style="color: #559944;">Create a Python list to store your grocery list</span>
 <span style="color: #a9dbfa;">groceries</span> = [<span style="color: #c5937c;">"Milk"</span>, <span style="color: #c5937c;">"Jelly"</span>, <span style="color: #c5937c;">"Orange Juice"</span>,<span style="color: #c5937c;">"Peanut Butter"</span>]
@@ -314,9 +305,9 @@ groceries.append(<span style="color: #c5937c;">"Coffee"</span>)
 </div>
 </div>
 
-<div id="outline-container-org1ea8fad" class="outline-3">
-<h3 id="org1ea8fad">Dictionaries</h3>
-<div class="outline-text-3" id="text-org1ea8fad">
+<div id="outline-container-org84bf468" class="outline-3">
+<h3 id="org84bf468">Dictionaries</h3>
+<div class="outline-text-3" id="text-org84bf468">
 <p>
 A dictionary is a key, value pair collection of data.
 </p>
@@ -358,9 +349,9 @@ Angelina Jolie
 </pre>
 </div>
 </div>
-<div id="outline-container-org4619d80" class="outline-3">
-<h3 id="org4619d80">Activity - Pet Hobbies</h3>
-<div class="outline-text-3" id="text-org4619d80">
+<div id="outline-container-org0ecd23e" class="outline-3">
+<h3 id="org0ecd23e">Activity - Pet Hobbies</h3>
+<div class="outline-text-3" id="text-org0ecd23e">
 <ol class="org-ol">
 <li>Create a dictionary to store the following:
 <ul class="org-ul">
@@ -409,13 +400,13 @@ My wake up time on Monday is 7:00 a.m.
 </div>
 
 
-<div id="outline-container-org54cc09a" class="outline-2">
-<h2 id="org54cc09a">Office hours</h2>
-<div class="outline-text-2" id="text-org54cc09a">
+<div id="outline-container-orgc3ae3ed" class="outline-2">
+<h2 id="orgc3ae3ed">Office hours</h2>
+<div class="outline-text-2" id="text-orgc3ae3ed">
 </div>
-<div id="outline-container-orga2fadb0" class="outline-3">
-<h3 id="orga2fadb0">When to use [] or {} or ()?</h3>
-<div class="outline-text-3" id="text-orga2fadb0">
+<div id="outline-container-org4de5594" class="outline-3">
+<h3 id="org4de5594">When to use [] or {} or ()?</h3>
+<div class="outline-text-3" id="text-org4de5594">
 <ul class="org-ul">
 <li>[] for accessing a dictionary key or a list index.</li>
 <li>{} for creating a dictionary or in f-strings.</li>
@@ -442,41 +433,41 @@ a
 </div>
 </div>
 
-<div id="outline-container-org5571091" class="outline-3">
-<h3 id="org5571091">What is Anaconda, IDLE, VS Code?</h3>
-<div class="outline-text-3" id="text-org5571091">
+<div id="outline-container-orgc691434" class="outline-3">
+<h3 id="orgc691434">What is Anaconda, IDLE, VS Code?</h3>
+<div class="outline-text-3" id="text-orgc691434">
 <p>
 They are different ways to work with python code. Anaconda is an environment manager and package manager, IDLE is an editor and VS Code is a very powerful editor that can become an Integrated Development Environment when using extensions.
 </p>
 </div>
 </div>
-<div id="outline-container-org21df61d" class="outline-3">
-<h3 id="org21df61d">Can we use <code>my_list.index()</code> instead of accessing it with <code>[i]</code>?</h3>
-<div class="outline-text-3" id="text-org21df61d">
+<div id="outline-container-org66779d6" class="outline-3">
+<h3 id="org66779d6">Can we use <code>my_list.index()</code> instead of accessing it with <code>[i]</code>?</h3>
+<div class="outline-text-3" id="text-org66779d6">
 <p>
 Yes.
 </p>
 </div>
 </div>
-<div id="outline-container-org517aef1" class="outline-3">
-<h3 id="org517aef1">Can we work with Python 3.10 or other version that is not 3.7?</h3>
-<div class="outline-text-3" id="text-org517aef1">
+<div id="outline-container-orge5e5394" class="outline-3">
+<h3 id="orge5e5394">Can we work with Python 3.10 or other version that is not 3.7?</h3>
+<div class="outline-text-3" id="text-orge5e5394">
 <p>
 We can work with any version of Python out of the box but the problems raise whenever we work with libraries. Some versions have very different syntax like <a href="https://docs.python.org/3/whatsnew/3.6.html#whatsnew36-pep498">f-strings in version 3.6.</a>
 </p>
 </div>
 </div>
-<div id="outline-container-orgd378929" class="outline-3">
-<h3 id="orgd378929">How to know if we have Python installed?</h3>
-<div class="outline-text-3" id="text-orgd378929">
+<div id="outline-container-org83d357a" class="outline-3">
+<h3 id="org83d357a">How to know if we have Python installed?</h3>
+<div class="outline-text-3" id="text-org83d357a">
 <p>
 There is no &ldquo;Python app&rdquo;. You can know what version you have installed using: <code>python --version</code> or <code>py --version</code> in the terminal.
 </p>
 </div>
 </div>
-<div id="outline-container-orgf5c4c3f" class="outline-3">
-<h3 id="orgf5c4c3f">Do we need to change directory for executing python code?</h3>
-<div class="outline-text-3" id="text-orgf5c4c3f">
+<div id="outline-container-org85ab979" class="outline-3">
+<h3 id="org85ab979">Do we need to change directory for executing python code?</h3>
+<div class="outline-text-3" id="text-org85ab979">
 <p>
 Depends if we are in a workspace. A workspace is a folder with all the files we are using in a project/app/library, etc.
 </p>
@@ -501,7 +492,7 @@ Credit to Naomi for the Office Hours responses.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Alberto Valdez</p>
-<p class="date">Created: 2022-07-14 Thu 00:24</p>
+<p class="date">Created: 2022-07-14 Thu 22:17</p>
 </div>
 </body>
 </html>

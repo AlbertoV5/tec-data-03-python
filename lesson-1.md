@@ -1,6 +1,6 @@
-|                     |                          |                          |                                     |
-|-------------------- |------------------------- |------------------------- |------------------------------------ |
-| [<<Back](./index.md) | [Lesson-2](./lesson-2.md) | [Material](./material.md) | [Challenge>>](./challenge/readme.md) |
+|                      |
+|--------------------- |
+| [<<Back](./readme.md) |
 
 These notes are taken during the class.
 

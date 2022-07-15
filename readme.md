@@ -1,6 +1,6 @@
-|                                                           |                          |                          |                                     |
-|---------------------------------------------------------- |------------------------- |------------------------- |------------------------------------ |
-| [<<<Home](https://albertov5.github.io/tec-data/index.html) | [Lesson-1](./lesson-1.md) | [Lesson-2](./lesson-2.md) | [Challenge>>](./challenge/readme.md) |
+|                                                           |                          |                          |                                      |
+|---------------------------------------------------------- |------------------------- |------------------------- |------------------------------------- |
+| [<<<Home](https://albertov5.github.io/tec-data/index.html) | [Lesson-1](./lesson-1.md) | [Lesson-2](./lesson-2.md) | [Challenge>>>](./challenge/readme.md) |
 
 
 # Introduction
@@ -35,6 +35,7 @@ pwd
 ls
 ```
 
+    LICENSE
     challenge
     index.html
     lesson-1.html
@@ -67,6 +68,7 @@ cd lesson-1 && pwd
 cd ..
 ```
 
+    LICENSE
     challenge
     index.html
     lesson-1.html
