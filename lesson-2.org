@@ -234,7 +234,7 @@ We were able to continue the sequence because we stored the last number in the =
 
 Let's move to the working directory.
 #+begin_src shell :results output replace
-cd ./material/3-2-Student-Resources/09-Evr_WritingNetflixData
+cd ./resources/3-2-Student-Resources/09-Evr_WritingNetflixData
 echo "---this is the path---"
 pwd
 echo "---these are the files in the path---"
@@ -244,7 +244,7 @@ ls
 #+RESULTS:
 #+begin_example
 ---this is the path---
-/Users/albertovaldez/tec-data/tec-data-03-python/material/3-2-Student-Resources/09-Evr_WritingNetflixData
+/Users/albertovaldez/tec-data/tec-data-03-python/resources/3-2-Student-Resources/09-Evr_WritingNetflixData
 ---these are the files in the path---
 README.md
 Resources
@@ -272,7 +272,7 @@ So we need a for loop and then use =[0]= to index the first column, which will b
 
 Let's use the =os= and =csv= modules in order to both read and write the files.
 #+NAME: search_video
-#+begin_src python :var video = "Breaking Bad" :dir ./material/3-2-Student-Resources/09-Evr_WritingNetflixData
+#+begin_src python :var video = "Breaking Bad" :dir ./resources/3-2-Student-Resources/09-Evr_WritingNetflixData
 import os
 import csv
 
@@ -300,7 +300,7 @@ with open(csvpath, newline="") as csvfile:
 
 Then our output file will look like this:
 
-#+begin_src shell :results output replace :dir ./material/3-2-Student-Resources/09-Evr_WritingNetflixData
+#+begin_src shell :results output replace :dir ./resources/3-2-Student-Resources/09-Evr_WritingNetflixData
 cat output/video_result.txt
 #+end_src
 
@@ -310,13 +310,13 @@ Title: Breaking Bad, Rating Level: TV-MA (For mature audiences.  May not be suit
 #+end_example
 
 Now let's try to find it using =video = Scream=.
-#+CALL: search_video(video = "Scream") :dir ./material/3-2-Student-Resources/09-Evr_WritingNetflixData
+#+CALL: search_video(video = "Scream") :dir ./resources/3-2-Student-Resources/09-Evr_WritingNetflixData
 
 #+RESULTS:
 : Title: Scream, Rating Level: TV-14 (Parents strongly cautioned. May be unsuitable for children ages 14 and under.)
 
 Let's take a look at the file again.
-#+begin_src shell :results output replace :dir ./material/3-2-Student-Resources/09-Evr_WritingNetflixData
+#+begin_src shell :results output replace :dir ./resources/3-2-Student-Resources/09-Evr_WritingNetflixData
 cat output/video_result.txt
 #+end_src
 
@@ -326,7 +326,7 @@ Title: Scream, Rating Level: TV-14 (Parents strongly cautioned. May be unsuitabl
 #+end_example
 
 Extra tip: We can empty the .txt file with this command.
-#+begin_src shell :dir ./material/3-2-Student-Resources/09-Evr_WritingNetflixData
+#+begin_src shell :dir ./resources/3-2-Student-Resources/09-Evr_WritingNetflixData
 > output/video_result.txt
 #+end_src
 

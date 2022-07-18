@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-07-14 Thu 22:17 -->
+<!-- 2022-07-18 Mon 18:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python Fundamentals</title>
@@ -23,33 +23,31 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org863369f">Introduction</a></li>
-<li><a href="#orgb77a02d">Terminal and bash</a>
+<li><a href="#org57ef9a8">1. Introduction</a>
 <ul>
-<li><a href="#org3ec4858">Useful commands</a>
-<ul>
-<li><a href="#org5619ce1">Print working directory</a></li>
-<li><a href="#orgfca1467">List directory</a></li>
-<li><a href="#orgd768c63">Change directory</a></li>
+<li><a href="#org0d190f5">1.1. Git</a></li>
 </ul>
 </li>
-<li><a href="#org3428ee3">Navigating with the Terminal Example</a></li>
-</ul>
-</li>
-<li><a href="#org1b63026">Git</a>
+<li><a href="#orge587188">2. Python</a>
 <ul>
-<li><a href="#org5eb3c59">Installing homebrew</a></li>
-<li><a href="#org2a65f8f">Installing git</a></li>
-<li><a href="#org0cb5f2f">Checking versions</a></li>
+<li><a href="#org17b00db">2.1. Python versions - End of life</a></li>
 </ul>
 </li>
-<li><a href="#org653a49b">Python</a>
+<li><a href="#org739828c">3. Working with Python files</a>
 <ul>
-<li><a href="#orgb925ad9">Python versions - End of life</a></li>
+<li><a href="#org11107cc">3.1. Creating a file from the Terminal</a></li>
+<li><a href="#org520cd88">3.2. Editing a file</a></li>
+<li><a href="#org01cb4ae">3.3. Running a file</a></li>
 </ul>
 </li>
-<li><a href="#orga1623fb">VS Code and GitHub</a></li>
-<li><a href="#orgb827e30">Working with Python files</a></li>
+<li><a href="#org5ad5c3f">4. Python Types</a>
+<ul>
+<li><a href="#orgc590098">4.1. Creating a variable</a></li>
+<li><a href="#org5b2078e">4.2. Keywords</a></li>
+<li><a href="#orgf1193ad">4.3. Python Operations</a></li>
+</ul>
+</li>
+<li><a href="#org6a02d80">5. Python Lists</a></li>
 </ul>
 </div>
 </div>
@@ -67,7 +65,7 @@
 </colgroup>
 <tbody>
 <tr>
-<td class="org-left"><a href="https://albertov5.github.io/tec-data/index.html">&lt;&lt;&lt;Home</a></td>
+<td class="org-left"><a href="https://albertov5.github.io/tec-data">&lt;&lt;&lt;Home</a></td>
 <td class="org-left"><a href="./lesson-1.html">Lesson-1</a></td>
 <td class="org-left"><a href="./lesson-2.html">Lesson-2</a></td>
 <td class="org-left"><a href="./challenge/readme.html">Challenge&gt;&gt;&gt;</a></td>
@@ -75,9 +73,9 @@
 </tbody>
 </table>
 
-<div id="outline-container-org863369f" class="outline-2">
-<h2 id="org863369f">Introduction</h2>
-<div class="outline-text-2" id="text-org863369f">
+<div id="outline-container-org57ef9a8" class="outline-2">
+<h2 id="org57ef9a8"><span class="section-number-2">1.</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 Python is one of the most popular languages in the world, used in many industries to accomplish different goals. It&rsquo;s very easy to use, as you can focus on the problem and not the intricacies of the language.
 </p>
@@ -90,128 +88,26 @@ Here is a YouTube playlist of keynotes that I&rsquo;ve collected over the past m
 
 <hr />
 </div>
-</div>
-<div id="outline-container-orgb77a02d" class="outline-2">
-<h2 id="orgb77a02d">Terminal and bash</h2>
-<div class="outline-text-2" id="text-orgb77a02d">
-</div>
-<div id="outline-container-org3ec4858" class="outline-3">
-<h3 id="org3ec4858">Useful commands</h3>
-<div class="outline-text-3" id="text-org3ec4858">
-</div>
-<div id="outline-container-org5619ce1" class="outline-4">
-<h4 id="org5619ce1">Print working directory</h4>
-<div class="outline-text-4" id="text-org5619ce1">
-<div class="org-src-container">
-<pre class="src src-shell" id="orgc692b64"><span style="color: #33CCAA;">pwd</span>
-</pre>
-</div>
 
-<pre class="example" id="org8033ac4">
-/Users/albertovaldez/tec-data/tec-data-03-python
-</pre>
-</div>
-</div>
-
-<div id="outline-container-orgfca1467" class="outline-4">
-<h4 id="orgfca1467">List directory</h4>
-<div class="outline-text-4" id="text-orgfca1467">
-<div class="org-src-container">
-<pre class="src src-shell" id="orgc2bd978"><span style="color: #33CCAA;">ls</span>
-</pre>
-</div>
-
-<pre class="example" id="org4505aab">
-LICENSE
-challenge
-index.html
-lesson-1.html
-lesson-1.md
-lesson-1.org
-lesson-2.html
-lesson-2.md
-lesson-2.org
-material
-publish.inc
-readme.html
-readme.md
-readme.org
-</pre>
-</div>
-</div>
-
-<div id="outline-container-orgd768c63" class="outline-4">
-<h4 id="orgd768c63">Change directory</h4>
-<div class="outline-text-4" id="text-orgd768c63">
-<div class="org-src-container">
-<pre class="src src-shell" id="org4b9b702"><span style="color: #33CCAA;">cd</span> $<span style="color: #a9dbfa;">path</span>
-</pre>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org3428ee3" class="outline-3">
-<h3 id="org3428ee3">Navigating with the Terminal Example</h3>
-<div class="outline-text-3" id="text-org3428ee3">
-<p>
-First let&rsquo;s call <code>ls</code> to see the contents of the current directory.
-Then let&rsquo;s move into the lesson-1 folder and check if we are actually in that directory with <code>cd lesson-1 &amp;&amp; pwd</code>.
-The <code>&amp;&amp;</code> operator will help us run commands sequentially.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-shell" id="org88ec82a"><span style="color: #33CCAA;">ls</span>
-<span style="color: #33CCAA;">cd</span> lesson-1 &amp;&amp; <span style="color: #33CCAA;">pwd</span>
-<span style="color: #33CCAA;">cd</span> ..
-</pre>
-</div>
-
-<pre class="example" id="org59659cb">
-LICENSE
-challenge
-index.html
-lesson-1.html
-lesson-1.md
-lesson-1.org
-lesson-2.html
-lesson-2.md
-lesson-2.org
-material
-publish.inc
-readme.html
-readme.md
-readme.org
-</pre>
-
-<p>
-Use <code>cd ..</code> to navigate to the top directory.
-Use <code>cd ../week-1</code> to navigate to a directory named &ldquo;week-1&rdquo; in the top directory.
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org1b63026" class="outline-2">
-<h2 id="org1b63026">Git</h2>
-<div class="outline-text-2" id="text-org1b63026">
+<div id="outline-container-org0d190f5" class="outline-3">
+<h3 id="org0d190f5"><span class="section-number-3">1.1.</span> Git</h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
 Version control tool that will allow us to interact with GitHub from the Terminal.
 </p>
-</div>
 
-<div id="outline-container-org5eb3c59" class="outline-3">
-<h3 id="org5eb3c59">Installing homebrew</h3>
-<div class="outline-text-3" id="text-org5eb3c59">
+<p>
+Installing homebrew
+</p>
+
 <p>
 <code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code>
 </p>
-</div>
-</div>
 
-<div id="outline-container-org2a65f8f" class="outline-3">
-<h3 id="org2a65f8f">Installing git</h3>
-<div class="outline-text-3" id="text-org2a65f8f">
+<p>
+Installing git
+</p>
+
 <p>
 <code>brew install git</code>
 </p>
@@ -219,78 +115,57 @@ Version control tool that will allow us to interact with GitHub from the Termina
 <p>
 <code>brew install git-lfs</code>
 </p>
-</div>
-</div>
 
-<div id="outline-container-org0cb5f2f" class="outline-3">
-<h3 id="org0cb5f2f">Checking versions</h3>
-<div class="outline-text-3" id="text-org0cb5f2f">
+<p>
+Checking versions
+</p>
 <div class="org-src-container">
-<pre class="src src-shell" id="orgcf87e9a"><span style="color: #33CCAA;">git</span> --version
+<pre class="src src-shell" id="org0db0cab"><span style="color: #33CCAA;">git</span> --version
 </pre>
 </div>
-<pre class="example" id="orgf7747ed">
+<pre class="example" id="orgbffadb9">
 git version 2.24.3 (Apple Git-128)
 </pre>
 
 <div class="org-src-container">
-<pre class="src src-shell" id="org1c26f99">git-lfs --version
+<pre class="src src-shell" id="org34df8db">git-lfs --version
 </pre>
 </div>
-<pre class="example" id="org469a064">
+<pre class="example" id="orgb5c8a8f">
 git-lfs/3.2.0 (GitHub; darwin amd64; go 1.18.2)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org653a49b" class="outline-2">
-<h2 id="org653a49b">Python</h2>
-<div class="outline-text-2" id="text-org653a49b">
-<p>
-We will be using <code>Python 3.7.13</code>. In my case I&rsquo;ll install it using pyenv with <code>pyenv install</code> <code>3.7.13</code>.
-</p>
-
-<p>
-I&rsquo;ll activate the environment with <code>pyenv local</code> <code>3.7.13</code> which will tell python to use <code>Python 3.7.13</code> whenever I execute it in this directory: <code>/Users/albertovaldez/tec-data/tec-data-03-python</code>.
-</p>
-
+<div id="outline-container-orge587188" class="outline-2">
+<h2 id="orge587188"><span class="section-number-2">2.</span> Python</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 We can check the version with:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell" id="org5cd9236">python --version
+<pre class="src src-shell" id="org04047de">python --version
 </pre>
 </div>
-<pre class="example" id="orgde01267">
+<pre class="example" id="orgeac1e04">
 Python 3.7.13
 </pre>
 
 <p>
-We can run Python from the terminal with:
+We can run an interactive Python REPL from the terminal with:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell" id="orgbaa84e1">python
+<pre class="src src-shell" id="org5b5fedf">python
 </pre>
 </div>
-
-<p>
-Let&rsquo;s try to use the current environment.
-</p>
-<div class="org-src-container">
-<pre class="src src-python" id="org86f7b29"><span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"Hello World!"</span>)
-</pre>
 </div>
 
-<pre class="example">
-Hello World!
-</pre>
-</div>
 
-<div id="outline-container-orgb925ad9" class="outline-3">
-<h3 id="orgb925ad9">Python versions - End of life</h3>
-<div class="outline-text-3" id="text-orgb925ad9">
+<div id="outline-container-org17b00db" class="outline-3">
+<h3 id="org17b00db"><span class="section-number-3">2.1.</span> Python versions - End of life</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
 <a href="https://endoflife.date/python">End of life</a> is a website that shows the dates of when a Python version is not longer receiving security updates. For example:
 </p>
@@ -335,32 +210,427 @@ The Python version is best chosen depending on the libraries you are planning on
 </div>
 
 
-<div id="outline-container-orga1623fb" class="outline-2">
-<h2 id="orga1623fb">VS Code and GitHub</h2>
-<div class="outline-text-2" id="text-orga1623fb">
+<div id="outline-container-org739828c" class="outline-2">
+<h2 id="org739828c"><span class="section-number-2">3.</span> Working with Python files</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org11107cc" class="outline-3">
+<h3 id="org11107cc"><span class="section-number-3">3.1.</span> Creating a file from the Terminal</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
-I use VS Code for working on development but for journaling/studying purposes I am using Emacs with org-mode as it let&rsquo;s me publish to HTML and Markdown while I interact with code blocks in a document wide session.
+Let&rsquo;s list our working directory.
 </p>
 
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #33CCAA;">ls</span>
+</pre>
+</div>
+
+<pre class="example" id="org8738055">
+LICENSE
+challenge
+index.html
+lesson-1.html
+lesson-1.md
+lesson-1.org
+lesson-2.html
+lesson-2.md
+lesson-2.org
+publish.inc
+readme.html
+readme.md
+readme.org
+resources
+</pre>
+
 <p>
-This is my GitHub account: <code>https://github.com/albertov5/</code>.
+We can create a new Python file in the resources directory.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #33CCAA;">touch</span> resources/hello_world.py
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org520cd88" class="outline-3">
+<h3 id="org520cd88"><span class="section-number-3">3.2.</span> Editing a file</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Start working in the current directory.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">code .
+</pre>
+</div>
+
+<p>
+We can use <code>Shift+P</code> in VS Code to open a file. Then find out <code>hello_world.py</code> file and input some Python code.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"Hello Wold!"</span>)
+</pre>
+</div>
+
+<p>
+In VSCode we can use <code>Shift-Cmd-P</code> and search for the <code>Python: Select Interpreter</code> command to make sure we are working with the Python version we want to work with.
 </p>
 </div>
 </div>
 
+<div id="outline-container-org01cb4ae" class="outline-3">
+<h3 id="org01cb4ae"><span class="section-number-3">3.3.</span> Running a file</h3>
+<div class="outline-text-3" id="text-3-3">
+<div class="org-src-container">
+<pre class="src src-shell">python resources/hello_world.py
+</pre>
+</div>
 
-<div id="outline-container-orgb827e30" class="outline-2">
-<h2 id="orgb827e30">Working with Python files</h2>
-<div class="outline-text-2" id="text-orgb827e30">
+<pre class="example" id="orgc7ad4be">
+Hello World!
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5ad5c3f" class="outline-2">
+<h2 id="org5ad5c3f"><span class="section-number-2">4.</span> Python Types</h2>
+<div class="outline-text-2" id="text-4">
 <p>
-I&rsquo;m making sure my working directory is <code>/Users/albertovaldez/tec-data/tec-data-03-python</code> and then I&rsquo;ll open VS Code with <code>code .</code>. All new python files for this week will live in this directory.
+Determining the type of a variable or constant.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #CC88CC;">print</span>(<span style="color: #CC88CC;">type</span>(<span style="color: #BBCCAA; font-weight: bold;">2019</span>))
+<span style="color: #CC88CC;">print</span>(<span style="color: #CC88CC;">type</span>(<span style="color: #BBCCAA; font-weight: bold;">73.81</span>))
+<span style="color: #CC88CC;">print</span>(<span style="color: #CC88CC;">type</span>(<span style="color: #c5937c;">"hello"</span>))
+<span style="color: #CC88CC;">print</span>(<span style="color: #CC88CC;">type</span>(<span style="color: #c5937c;">""</span>))
+<span style="color: #CC88CC;">print</span>(<span style="color: #CC88CC;">type</span>(<span style="color: #3399DD;">None</span>))
+<span style="color: #CC88CC;">print</span>(<span style="color: #CC88CC;">type</span>(<span style="color: #3399DD;">False</span>))
+</pre>
+</div>
+
+<pre class="example">
+&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;
+&lt;class 'str'&gt;
+&lt;class 'NoneType'&gt;
+&lt;class 'bool'&gt;
+</pre>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Data Type</th>
+<th scope="col" class="org-left">Python Classification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Integers</td>
+<td class="org-left">&lt;class &rsquo;int&rsquo;&gt;</td>
+</tr>
+
+<tr>
+<td class="org-left">Float point numbers</td>
+<td class="org-left">&lt;class &rsquo;float&rsquo;&gt;</td>
+</tr>
+
+<tr>
+<td class="org-left">Strings</td>
+<td class="org-left">&lt;class &rsquo;str&rsquo;&gt;</td>
+</tr>
+
+<tr>
+<td class="org-left">Boolean</td>
+<td class="org-left">&lt;class &rsquo;bool&rsquo;&gt;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-orgc590098" class="outline-3">
+<h3 id="orgc590098"><span class="section-number-3">4.1.</span> Creating a variable</h3>
+<div class="outline-text-3" id="text-4-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">num_candidates</span> = <span style="color: #BBCCAA; font-weight: bold;">3</span>
+<span style="color: #a9dbfa;">winning_percentage</span> = <span style="color: #BBCCAA; font-weight: bold;">73.81</span>
+<span style="color: #a9dbfa;">candidate</span> = <span style="color: #c5937c;">"Diane"</span>
+<span style="color: #a9dbfa;">won_election</span> = <span style="color: #3399DD;">True</span>
+</pre>
+</div>
+
+<p>
+There are a few naming conventions in Python, for example using snake case for variables <sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> or general style guides like PEP 8 <sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>.
 </p>
 </div>
 </div>
+
+<div id="outline-container-org5b2078e" class="outline-3">
+<h3 id="org5b2078e"><span class="section-number-3">4.2.</span> Keywords</h3>
+<div class="outline-text-3" id="text-4-2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #CC88CC;">help</span>(<span style="color: #c5937c;">"keywords"</span>)
+</pre>
 </div>
+
+<div class="org-src-container">
+<pre class="src src-org">
+Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+False               class               from                or
+None                continue            global              pass
+True                def                 if                  raise
+and                 del                 import              return
+as                  elif                in                  try
+assert              else                is                  while
+async               except              lambda              with
+await               finally             nonlocal            yield
+break               for                 not                 
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf1193ad" class="outline-3">
+<h3 id="orgf1193ad"><span class="section-number-3">4.3.</span> Python Operations</h3>
+<div class="outline-text-3" id="text-4-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Operator</th>
+<th scope="col" class="org-left">Meaning</th>
+<th scope="col" class="org-left">Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">+</td>
+<td class="org-left">Adds two numbers.</td>
+<td class="org-left">x + y</td>
+</tr>
+
+<tr>
+<td class="org-left">–</td>
+<td class="org-left">Subtracts one number from another.</td>
+<td class="org-left">x – y</td>
+</tr>
+
+<tr>
+<td class="org-left">*</td>
+<td class="org-left">Multiplies two numbers.</td>
+<td class="org-left">x * y</td>
+</tr>
+
+<tr>
+<td class="org-left">%</td>
+<td class="org-left">The “%” is known as the modulus When used in place of “/” it will divide one number by another and return the remainder of the division.</td>
+<td class="org-left">x % y (remainder of x/y)</td>
+</tr>
+
+<tr>
+<td class="org-left">//</td>
+<td class="org-left">Divides one number by another and returns an integer. This is known as floor division.</td>
+<td class="org-left">x // y</td>
+</tr>
+
+<tr>
+<td class="org-left">**</td>
+<td class="org-left">Raises a number to a power.</td>
+<td class="org-left">x**y (x to the power y)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Order of operations must follow the order of precedence of mathematics.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #CC88CC;">print</span>(<span style="color: #BBCCAA; font-weight: bold;">5</span> + <span style="color: #BBCCAA; font-weight: bold;">2</span> * <span style="color: #BBCCAA; font-weight: bold;">3</span>)
+<span style="color: #CC88CC;">print</span>(<span style="color: #BBCCAA; font-weight: bold;">8</span> // <span style="color: #BBCCAA; font-weight: bold;">5</span> - <span style="color: #BBCCAA; font-weight: bold;">3</span>)
+<span style="color: #CC88CC;">print</span>(<span style="color: #BBCCAA; font-weight: bold;">8</span> + <span style="color: #BBCCAA; font-weight: bold;">22</span> * <span style="color: #BBCCAA; font-weight: bold;">2</span> - <span style="color: #BBCCAA; font-weight: bold;">4</span>)
+<span style="color: #CC88CC;">print</span>(<span style="color: #BBCCAA; font-weight: bold;">16</span> - <span style="color: #BBCCAA; font-weight: bold;">3</span> / <span style="color: #BBCCAA; font-weight: bold;">2</span> + <span style="color: #BBCCAA; font-weight: bold;">7</span> - <span style="color: #BBCCAA; font-weight: bold;">1</span>)
+<span style="color: #CC88CC;">print</span>(<span style="color: #BBCCAA; font-weight: bold;">3</span> ** <span style="color: #BBCCAA; font-weight: bold;">3</span> % <span style="color: #BBCCAA; font-weight: bold;">5</span>)
+<span style="color: #CC88CC;">print</span>(<span style="color: #BBCCAA; font-weight: bold;">5</span> + <span style="color: #BBCCAA; font-weight: bold;">9</span> * <span style="color: #BBCCAA; font-weight: bold;">3</span> / <span style="color: #BBCCAA; font-weight: bold;">2</span> - <span style="color: #BBCCAA; font-weight: bold;">4</span>)
+</pre>
+</div>
+
+<pre class="example">
+11
+-2
+48
+20.5
+2
+14.5
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #CC88CC;">print</span>((<span style="color: #BBCCAA; font-weight: bold;">5</span> + <span style="color: #BBCCAA; font-weight: bold;">2</span>) * <span style="color: #BBCCAA; font-weight: bold;">3</span>)
+<span style="color: #CC88CC;">print</span>((<span style="color: #BBCCAA; font-weight: bold;">8</span> //<span style="color: #BBCCAA; font-weight: bold;">5</span>) - <span style="color: #BBCCAA; font-weight: bold;">3</span>)
+<span style="color: #CC88CC;">print</span>((<span style="color: #BBCCAA; font-weight: bold;">8</span> + (<span style="color: #BBCCAA; font-weight: bold;">22</span> * (<span style="color: #BBCCAA; font-weight: bold;">2</span> - <span style="color: #BBCCAA; font-weight: bold;">4</span>))))
+<span style="color: #CC88CC;">print</span>(<span style="color: #BBCCAA; font-weight: bold;">16</span> - <span style="color: #BBCCAA; font-weight: bold;">3</span> / (<span style="color: #BBCCAA; font-weight: bold;">2</span> + <span style="color: #BBCCAA; font-weight: bold;">7</span>) - <span style="color: #BBCCAA; font-weight: bold;">1</span>)
+<span style="color: #CC88CC;">print</span>(<span style="color: #BBCCAA; font-weight: bold;">3</span> ** (<span style="color: #BBCCAA; font-weight: bold;">3</span> % <span style="color: #BBCCAA; font-weight: bold;">5</span>))
+</pre>
+</div>
+
+<pre class="example">
+21
+-2
+-36
+14.666666666666666
+27
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #CC88CC;">print</span>(<span style="color: #BBCCAA; font-weight: bold;">5</span> + (<span style="color: #BBCCAA; font-weight: bold;">9</span> * <span style="color: #BBCCAA; font-weight: bold;">3</span> / <span style="color: #BBCCAA; font-weight: bold;">2</span> - <span style="color: #BBCCAA; font-weight: bold;">4</span>))
+<span style="color: #CC88CC;">print</span>(<span style="color: #BBCCAA; font-weight: bold;">5</span> + (<span style="color: #BBCCAA; font-weight: bold;">9</span> * <span style="color: #BBCCAA; font-weight: bold;">3</span> / (<span style="color: #BBCCAA; font-weight: bold;">2</span> - <span style="color: #BBCCAA; font-weight: bold;">4</span>)))
+</pre>
+</div>
+
+<pre class="example">
+14.5
+-8.5
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org6a02d80" class="outline-2">
+<h2 id="org6a02d80"><span class="section-number-2">5.</span> Python Lists</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+A list is an array that contains multiple data items.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">counties</span> = [<span style="color: #c5937c;">"Arapahoe"</span>, <span style="color: #c5937c;">"Denver"</span>, <span style="color: #c5937c;">"Jefferson"</span>]
+<span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"This is the list:"</span>, counties)
+<span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"This is the first item:"</span>, counties[<span style="color: #BBCCAA; font-weight: bold;">0</span>])
+<span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"This is the last item:"</span>, counties[-<span style="color: #BBCCAA; font-weight: bold;">1</span>])
+<span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"This is the length of the list:"</span>, <span style="color: #CC88CC;">len</span>(counties))
+<span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"This is a slice of the list:"</span>, counties[<span style="color: #BBCCAA; font-weight: bold;">0</span>:<span style="color: #BBCCAA; font-weight: bold;">2</span>])
+<span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"This is other way to slice:"</span>, counties[:<span style="color: #BBCCAA; font-weight: bold;">2</span>])
+</pre>
+</div>
+
+<pre class="example">
+This is the list: ['Arapahoe', 'Denver', 'Jefferson']
+This is the first item: Arapahoe
+This is the last item: Jefferson
+This is the length of the list: 3
+This is a slice of the list: ['Arapahoe', 'Denver']
+This is other way to slice: ['Arapahoe', 'Denver']
+</pre>
+
+
+<p>
+Appending items to a list.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">counties</span> = [<span style="color: #c5937c;">"Arapahoe"</span>, <span style="color: #c5937c;">"Denver"</span>, <span style="color: #c5937c;">"Jefferson"</span>]
+counties.append(<span style="color: #c5937c;">"El Paso"</span>)
+counties.insert(<span style="color: #BBCCAA; font-weight: bold;">2</span>, <span style="color: #c5937c;">"El Paso"</span>)
+<span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"We added El Paso twice to the list."</span>)
+<span style="color: #CC88CC;">print</span>(counties)
+counties.remove(<span style="color: #c5937c;">"El Paso"</span>)
+<span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"We removed the first instance of El Paso."</span>)
+<span style="color: #CC88CC;">print</span>(counties)
+counties.pop(-<span style="color: #BBCCAA; font-weight: bold;">1</span>)
+<span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"We removed the last element in the list."</span>)
+<span style="color: #CC88CC;">print</span>(counties)
+</pre>
+</div>
+
+<pre class="example">
+We added El Paso twice to the list.
+['Arapahoe', 'Denver', 'El Paso', 'Jefferson', 'El Paso']
+We removed the first instance of El Paso.
+['Arapahoe', 'Denver', 'Jefferson', 'El Paso']
+We removed the last element in the list.
+['Arapahoe', 'Denver', 'Jefferson']
+</pre>
+
+
+<p>
+Changing elements from a list.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">counties</span> = [<span style="color: #c5937c;">"Arapahoe"</span>, <span style="color: #c5937c;">"Denver"</span>, <span style="color: #c5937c;">"Jefferson"</span>]
+<span style="color: #a9dbfa;">counties</span>[<span style="color: #BBCCAA; font-weight: bold;">2</span>] = <span style="color: #c5937c;">"El Paso"</span>
+<span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"We replace index at 2 with El Paso."</span>)
+<span style="color: #CC88CC;">print</span>(counties)
+</pre>
+</div>
+
+<pre class="example">
+We replace index at 2 with El Paso.
+['Arapahoe', 'Denver', 'El Paso']
+</pre>
+
+
+<p>
+Let&rsquo;s try it all together.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">counties</span> = [<span style="color: #c5937c;">"Arapahoe"</span>, <span style="color: #c5937c;">"Denver"</span>, <span style="color: #c5937c;">"Jefferson"</span>]
+counties.insert(<span style="color: #BBCCAA; font-weight: bold;">1</span>, <span style="color: #c5937c;">"El Paso"</span>)
+counties.remove(<span style="color: #c5937c;">"Arapahoe"</span>)
+<span style="color: #a9dbfa;">jefferson</span> = counties[<span style="color: #BBCCAA; font-weight: bold;">2</span>]
+<span style="color: #a9dbfa;">counties</span>[<span style="color: #BBCCAA; font-weight: bold;">2</span>] = counties[<span style="color: #BBCCAA; font-weight: bold;">1</span>]
+<span style="color: #a9dbfa;">counties</span>[<span style="color: #BBCCAA; font-weight: bold;">1</span>] = jefferson
+counties.append(<span style="color: #c5937c;">"Arapahoe"</span>)
+<span style="color: #CC88CC;">print</span>(counties)
+</pre>
+</div>
+
+<pre class="example">
+['El Paso', 'Jefferson', 'Denver', 'Arapahoe']
+</pre>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="https://en.wikipedia.org/wiki/Snake_case">https://en.wikipedia.org/wiki/Snake_case</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="https://peps.python.org/pep-0008/">https://peps.python.org/pep-0008/</a>
+</p></div></div>
+
+
+</div>
+</div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Alberto Valdez</p>
-<p class="date">Created: 2022-07-14 Thu 22:17</p>
+<p class="date">Created: 2022-07-18 Mon 18:39</p>
 </div>
 </body>
 </html>
