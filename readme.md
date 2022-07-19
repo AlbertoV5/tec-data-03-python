@@ -2,6 +2,8 @@
 |----------------------------------------------- |------------------------- |------------------------- |------------------------------------- |
 | [<<<Home](https://albertov5.github.io/tec-data) | [Lesson-1](./lesson-1.md) | [Lesson-2](./lesson-2.md) | [Challenge>>>](./challenge/readme.md) |
 
+[Repository](https://github.com/albertov5/tec-data-03-python)
+
 
 # Introduction
 
@@ -551,7 +553,7 @@ for county, voters in counties_dict.items():
     Denver county has 413229 registered voters
     Jefferson county has 390222 registered voters
 
-Point decimals formatting1.
+Point decimals formatting.
 
 ```python
 candidate_votes = 313123
