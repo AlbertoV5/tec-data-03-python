@@ -23,11 +23,12 @@ import csv
 from pathlib import Path
 
 
-# Inputs.
+# Variables for inputs.
 path = Path.cwd() / Path("resources")
-file_name = "election_results.csv"
+data_filename = "election_results.csv"
+results_filename = "election_results.txt"
+# Variables for results.
 election_results = {}
-# Outputs.
 total_votes = 0
 candidate_list = []
 candidate_votes = {}
@@ -35,8 +36,8 @@ vote_percentage = {}
 election_winner = ""
 
 # Read dataset.
-with open(path / file_name, "r") as file:
-    file = csv.reader(file, delimiter = ",")
+with open(path / data_filename, "r") as file:
+    file = csv.reader(file, delimiter=",")
     for row in file:
         candidate = row[2]
         county = row[1]
@@ -65,16 +66,30 @@ for candidate in vote_percentage:
     if vote_percentage[candidate] > vote_percentage[election_winner]:
         election_winner = candidate
 
-print("--------------------")
-print("Election Results.")
-print("--------------------")
-print("Here are this year's candidates:")
-for i, candidate in enumerate(candidate_list):
-    print(f"{i + 1}. {candidate}")
-print(f"They gathered a total of \033[1m{total_votes}\033[0m combined votes.")
-for candidate in candidate_votes:
-    print(
-        f"-> {candidate} gathered {candidate_votes[candidate]} votes "
-        f"with \033[1m{vote_percentage[candidate]* 100:.2f}%\033[0m."
+# Print results.
+print_candidates = ""
+for i, candidate in enumerate(candidate_votes):
+    print_candidates += (
+        f"{i + 1}. {candidate}: {vote_percentage[candidate]* 100:.1f}%"
+        f"({candidate_votes[candidate]:,}).\n"
     )
-print(f"And the winner of the election is \033[1m{election_winner}\033[0m!")
+
+
+print("-------------------------------")
+print("Election Results.")
+print("-------------------------------")
+print(f"Total Votes: \033[1m{total_votes:,}\033[0m.")
+print(print_candidates[:-2])
+print("-------------------------------")
+print(f"The winner is \033[1m{election_winner}\033[0m.")
+print("-------------------------------")
+
+with open(path / results_filename, "w+") as file:
+    file.write(
+        f"Election Results\n"
+        f"-------------------------------\n"
+        f"Total Votes {total_votes:,}\n"
+        f"-------------------------------\n"
+        f"{print_candidates}"
+        f"-------------------------------\n"
+    )
