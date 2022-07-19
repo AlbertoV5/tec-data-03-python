@@ -7,11 +7,11 @@ from pathlib import Path
 
 
 # Add a variable to load a file from a path.
-challenge_path = Path.cwd() / "challenge"
+challenge_path = Path.cwd()
 resources_path = challenge_path / "resources"
 file_to_load = resources_path / "election_results.csv"
 # Add a variable to save the file to a path.
-file_to_save = resources_path / "election_analysis.txt"
+file_to_save = challenge_path / "election_analysis.txt"
 
 # Initialize a total vote counter.
 total_votes = 0
