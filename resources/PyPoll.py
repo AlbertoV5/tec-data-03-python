@@ -4,20 +4,20 @@ PyPoll
 In this project, our final Python script will need to
 be able to deliver the following information when the
 script is run:
-    1. Total number of votes cast
-    2. A complete list of candidates who received votes
-    3. Total number of votes each candidate received
-    4. Percentage of votes each candidate won
-    5. The winner of the election based on popular vote
+    1. Total number of votes cast.
+    2. A complete list of candidates who received votes.
+    3. Total number of votes each candidate received.
+    4. Percentage of votes each candidate won.
+    5. The winner of the election based on popular vote.
 
 Algorithm
     1. Open file with csv reader and iterate over rows.
     2. Store values in a dictionary.
-        2.1. Create a dictionary value per Candidate key if it has none.
-        2.2. Create a list value per County per Candidate if it has none.
-        2.3. If they exist, append ballot id to County per Candidate.
+        2.1. Create a new County dictionary per Candidate if it has none.
+        2.2. Create a new list per County per Candidate if it has none.
+        2.3. If they exist, append Ballot ID to County per Candidate list.
     3. Get candidates names via the dict keys, minus the header row.
-    4. Count the number of votes with the length of the Ballot id list.
+    4. Count the number of votes with the length of the Ballot ID list.
     5. Obtain percentages per Candidate using the total votes.
     6. Find the winner Candidate using the percentages.
     7. Print results to console.
@@ -51,7 +51,7 @@ with open(path / data_filename, "r") as file:
         if county not in election_results[candidate].keys():
             election_results[candidate][county] = []
         election_results[candidate][county].append(ballot_id)
-# 3. Get candidates names.
+# 3. Get candidates names. Remove header row.
 election_results.pop("Candidate")
 candidate_list = list(election_results.keys())
 # 4. Count votes.
@@ -64,7 +64,7 @@ for candidate in election_results:
 # 5. Obtain percentages.
 for candidate in candidate_votes:
     vote_percentage[candidate] = candidate_votes[candidate] / total_votes
-# 6. Find the winner.
+# 6. Find the winner. Make the first one the max, then compare sequentially.
 election_winner = list(vote_percentage.keys())[0]
 for candidate in vote_percentage:
     if vote_percentage[candidate] > vote_percentage[election_winner]:
