@@ -253,7 +253,7 @@ We were able to continue the sequence because we stored the last number in the `
 Let&rsquo;s move to the working directory.
 
 ```shell
-cd ./material/3-2-Student-Resources/09-Evr_WritingNetflixData
+cd ./resources/3-2-Student-Resources/09-Evr_WritingNetflixData
 echo "---this is the path---"
 pwd
 echo "---these are the files in the path---"
@@ -262,7 +262,7 @@ ls
 
 ```org
 ---this is the path---
-/Users/albertovaldez/tec-data/tec-data-03-python/material/3-2-Student-Resources/09-Evr_WritingNetflixData
+/Users/albertovaldez/tec-data/03-python/resources/3-2-Student-Resources/09-Evr_WritingNetflixData
 ---these are the files in the path---
 README.md
 Resources

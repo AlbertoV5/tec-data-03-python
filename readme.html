@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-07-18 Mon 18:39 -->
+<!-- 2022-07-18 Mon 19:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python Fundamentals</title>
@@ -23,31 +23,46 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org57ef9a8">1. Introduction</a>
+<li><a href="#org44cd30e">1. Introduction</a>
 <ul>
-<li><a href="#org0d190f5">1.1. Git</a></li>
+<li><a href="#org0d63d01">1.1. Git</a></li>
 </ul>
 </li>
-<li><a href="#orge587188">2. Python</a>
+<li><a href="#org20befe5">2. Python</a>
 <ul>
-<li><a href="#org17b00db">2.1. Python versions - End of life</a></li>
+<li><a href="#orgdf62b09">2.1. Python versions - End of life</a></li>
 </ul>
 </li>
-<li><a href="#org739828c">3. Working with Python files</a>
+<li><a href="#org0118a64">3. Working with Python files</a>
 <ul>
-<li><a href="#org11107cc">3.1. Creating a file from the Terminal</a></li>
-<li><a href="#org520cd88">3.2. Editing a file</a></li>
-<li><a href="#org01cb4ae">3.3. Running a file</a></li>
+<li><a href="#org24578d9">3.1. Creating a file from the Terminal</a></li>
+<li><a href="#org85cca7e">3.2. Editing a file</a></li>
+<li><a href="#org5f450a3">3.3. Running a file</a></li>
 </ul>
 </li>
-<li><a href="#org5ad5c3f">4. Python Types</a>
+<li><a href="#org97579c4">4. Python Types</a>
 <ul>
-<li><a href="#orgc590098">4.1. Creating a variable</a></li>
-<li><a href="#org5b2078e">4.2. Keywords</a></li>
-<li><a href="#orgf1193ad">4.3. Python Operations</a></li>
+<li><a href="#org95ce625">4.1. Creating a variable</a></li>
+<li><a href="#orgdc8126c">4.2. Keywords</a></li>
+<li><a href="#orga164278">4.3. Python Operations</a></li>
 </ul>
 </li>
-<li><a href="#org6a02d80">5. Python Lists</a></li>
+<li><a href="#org8c29339">5. Python Lists</a></li>
+<li><a href="#org0a646e8">6. Python Tuples</a></li>
+<li><a href="#org1334da8">7. Python Dictionaries</a></li>
+<li><a href="#org9bbb528">8. Decision Statements</a>
+<ul>
+<li><a href="#org30b6900">8.1. Nested if statements</a></li>
+<li><a href="#org3c22e4b">8.2. Elif</a></li>
+<li><a href="#orgb9e1db2">8.3. Logical Operators</a></li>
+</ul>
+</li>
+<li><a href="#orgddd0254">9. Loops</a>
+<ul>
+<li><a href="#org8941f7e">9.1. Iterating over Dictionaries</a></li>
+</ul>
+</li>
+<li><a href="#orgae6114f">10. F-Strings and Printing</a></li>
 </ul>
 </div>
 </div>
@@ -73,8 +88,8 @@
 </tbody>
 </table>
 
-<div id="outline-container-org57ef9a8" class="outline-2">
-<h2 id="org57ef9a8"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-org44cd30e" class="outline-2">
+<h2 id="org44cd30e"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Python is one of the most popular languages in the world, used in many industries to accomplish different goals. It&rsquo;s very easy to use, as you can focus on the problem and not the intricacies of the language.
@@ -89,8 +104,8 @@ Here is a YouTube playlist of keynotes that I&rsquo;ve collected over the past m
 <hr />
 </div>
 
-<div id="outline-container-org0d190f5" class="outline-3">
-<h3 id="org0d190f5"><span class="section-number-3">1.1.</span> Git</h3>
+<div id="outline-container-org0d63d01" class="outline-3">
+<h3 id="org0d63d01"><span class="section-number-3">1.1.</span> Git</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Version control tool that will allow us to interact with GitHub from the Terminal.
@@ -120,36 +135,36 @@ Installing git
 Checking versions
 </p>
 <div class="org-src-container">
-<pre class="src src-shell" id="org0db0cab"><span style="color: #33CCAA;">git</span> --version
+<pre class="src src-shell" id="org029e5ce"><span style="color: #33CCAA;">git</span> --version
 </pre>
 </div>
-<pre class="example" id="orgbffadb9">
+<pre class="example" id="orgfa46cea">
 git version 2.24.3 (Apple Git-128)
 </pre>
 
 <div class="org-src-container">
-<pre class="src src-shell" id="org34df8db">git-lfs --version
+<pre class="src src-shell" id="orgcb78162">git-lfs --version
 </pre>
 </div>
-<pre class="example" id="orgb5c8a8f">
+<pre class="example" id="org2b25b21">
 git-lfs/3.2.0 (GitHub; darwin amd64; go 1.18.2)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge587188" class="outline-2">
-<h2 id="orge587188"><span class="section-number-2">2.</span> Python</h2>
+<div id="outline-container-org20befe5" class="outline-2">
+<h2 id="org20befe5"><span class="section-number-2">2.</span> Python</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 We can check the version with:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell" id="org04047de">python --version
+<pre class="src src-shell" id="org82c0586">python --version
 </pre>
 </div>
-<pre class="example" id="orgeac1e04">
+<pre class="example" id="org02ab8af">
 Python 3.7.13
 </pre>
 
@@ -157,14 +172,14 @@ Python 3.7.13
 We can run an interactive Python REPL from the terminal with:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell" id="org5b5fedf">python
+<pre class="src src-shell" id="orgcb889cf">python
 </pre>
 </div>
 </div>
 
 
-<div id="outline-container-org17b00db" class="outline-3">
-<h3 id="org17b00db"><span class="section-number-3">2.1.</span> Python versions - End of life</h3>
+<div id="outline-container-orgdf62b09" class="outline-3">
+<h3 id="orgdf62b09"><span class="section-number-3">2.1.</span> Python versions - End of life</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 <a href="https://endoflife.date/python">End of life</a> is a website that shows the dates of when a Python version is not longer receiving security updates. For example:
@@ -210,12 +225,12 @@ The Python version is best chosen depending on the libraries you are planning on
 </div>
 
 
-<div id="outline-container-org739828c" class="outline-2">
-<h2 id="org739828c"><span class="section-number-2">3.</span> Working with Python files</h2>
+<div id="outline-container-org0118a64" class="outline-2">
+<h2 id="org0118a64"><span class="section-number-2">3.</span> Working with Python files</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org11107cc" class="outline-3">
-<h3 id="org11107cc"><span class="section-number-3">3.1.</span> Creating a file from the Terminal</h3>
+<div id="outline-container-org24578d9" class="outline-3">
+<h3 id="org24578d9"><span class="section-number-3">3.1.</span> Creating a file from the Terminal</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Let&rsquo;s list our working directory.
@@ -226,7 +241,7 @@ Let&rsquo;s list our working directory.
 </pre>
 </div>
 
-<pre class="example" id="org8738055">
+<pre class="example" id="org97b4ffe">
 LICENSE
 challenge
 index.html
@@ -254,8 +269,8 @@ We can create a new Python file in the resources directory.
 </div>
 </div>
 
-<div id="outline-container-org520cd88" class="outline-3">
-<h3 id="org520cd88"><span class="section-number-3">3.2.</span> Editing a file</h3>
+<div id="outline-container-org85cca7e" class="outline-3">
+<h3 id="org85cca7e"><span class="section-number-3">3.2.</span> Editing a file</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 Start working in the current directory.
@@ -280,23 +295,23 @@ In VSCode we can use <code>Shift-Cmd-P</code> and search for the <code>Python: S
 </div>
 </div>
 
-<div id="outline-container-org01cb4ae" class="outline-3">
-<h3 id="org01cb4ae"><span class="section-number-3">3.3.</span> Running a file</h3>
+<div id="outline-container-org5f450a3" class="outline-3">
+<h3 id="org5f450a3"><span class="section-number-3">3.3.</span> Running a file</h3>
 <div class="outline-text-3" id="text-3-3">
 <div class="org-src-container">
 <pre class="src src-shell">python resources/hello_world.py
 </pre>
 </div>
 
-<pre class="example" id="orgc7ad4be">
+<pre class="example" id="org887c969">
 Hello World!
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org5ad5c3f" class="outline-2">
-<h2 id="org5ad5c3f"><span class="section-number-2">4.</span> Python Types</h2>
+<div id="outline-container-org97579c4" class="outline-2">
+<h2 id="org97579c4"><span class="section-number-2">4.</span> Python Types</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Determining the type of a variable or constant.
@@ -360,8 +375,8 @@ Determining the type of a variable or constant.
 </table>
 </div>
 
-<div id="outline-container-orgc590098" class="outline-3">
-<h3 id="orgc590098"><span class="section-number-3">4.1.</span> Creating a variable</h3>
+<div id="outline-container-org95ce625" class="outline-3">
+<h3 id="org95ce625"><span class="section-number-3">4.1.</span> Creating a variable</h3>
 <div class="outline-text-3" id="text-4-1">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #a9dbfa;">num_candidates</span> = <span style="color: #BBCCAA; font-weight: bold;">3</span>
@@ -377,8 +392,8 @@ There are a few naming conventions in Python, for example using snake case for v
 </div>
 </div>
 
-<div id="outline-container-org5b2078e" class="outline-3">
-<h3 id="org5b2078e"><span class="section-number-3">4.2.</span> Keywords</h3>
+<div id="outline-container-orgdc8126c" class="outline-3">
+<h3 id="orgdc8126c"><span class="section-number-3">4.2.</span> Keywords</h3>
 <div class="outline-text-3" id="text-4-2">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #CC88CC;">help</span>(<span style="color: #c5937c;">"keywords"</span>)
@@ -404,8 +419,8 @@ break               for                 not
 </div>
 </div>
 
-<div id="outline-container-orgf1193ad" class="outline-3">
-<h3 id="orgf1193ad"><span class="section-number-3">4.3.</span> Python Operations</h3>
+<div id="outline-container-orga164278" class="outline-3">
+<h3 id="orga164278"><span class="section-number-3">4.3.</span> Python Operations</h3>
 <div class="outline-text-3" id="text-4-3">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -520,8 +535,8 @@ Order of operations must follow the order of precedence of mathematics.
 </div>
 
 
-<div id="outline-container-org6a02d80" class="outline-2">
-<h2 id="org6a02d80"><span class="section-number-2">5.</span> Python Lists</h2>
+<div id="outline-container-org8c29339" class="outline-2">
+<h2 id="org8c29339"><span class="section-number-2">5.</span> Python Lists</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 A list is an array that contains multiple data items.
@@ -613,6 +628,353 @@ counties.append(<span style="color: #c5937c;">"Arapahoe"</span>)
 </pre>
 </div>
 </div>
+
+<div id="outline-container-org0a646e8" class="outline-2">
+<h2 id="org0a646e8"><span class="section-number-2">6.</span> Python Tuples</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Tuples are immutable data structures that contain one or more items.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">counties</span> = (<span style="color: #c5937c;">"Arapahoe"</span>, <span style="color: #c5937c;">"Denver"</span>, <span style="color: #c5937c;">"Jefferson"</span>)
+<span style="color: #CC88CC;">print</span>(counties[:-<span style="color: #BBCCAA; font-weight: bold;">1</span>])
+</pre>
+</div>
+
+<pre class="example">
+('Arapahoe', 'Denver')
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org1334da8" class="outline-2">
+<h2 id="org1334da8"><span class="section-number-2">7.</span> Python Dictionaries</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+A dictionary is an object that stores a collection of data. It has a key and a value (key-value pairs).
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">counties</span> = {}
+<span style="color: #a9dbfa;">counties</span>[<span style="color: #c5937c;">"Arapahoe"</span>] = <span style="color: #BBCCAA; font-weight: bold;">422829</span>
+<span style="color: #CC88CC;">print</span>(counties)
+<span style="color: #a9dbfa;">counties</span>[<span style="color: #c5937c;">"Denver"</span>] = <span style="color: #BBCCAA; font-weight: bold;">463353</span>
+<span style="color: #a9dbfa;">counties</span>[<span style="color: #c5937c;">"Jefferson"</span>] = <span style="color: #BBCCAA; font-weight: bold;">432438</span>
+<span style="color: #CC88CC;">print</span>(counties)
+<span style="color: #CC88CC;">print</span>(counties.keys())
+<span style="color: #CC88CC;">print</span>(counties.values())
+<span style="color: #CC88CC;">print</span>(counties.get(<span style="color: #c5937c;">"Denver"</span>))
+</pre>
+</div>
+
+<pre class="example">
+{'Arapahoe': 422829}
+{'Arapahoe': 422829, 'Denver': 463353, 'Jefferson': 432438}
+dict_keys(['Arapahoe', 'Denver', 'Jefferson'])
+dict_values([422829, 463353, 432438])
+463353
+</pre>
+
+
+<p>
+List of dictionaries.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">voting_data</span> = []
+voting_data.append({<span style="color: #c5937c;">"county"</span>:<span style="color: #c5937c;">"Arapahoe"</span>, <span style="color: #c5937c;">"registered_voters"</span>:<span style="color: #BBCCAA; font-weight: bold;">422829</span>})
+voting_data.append({<span style="color: #c5937c;">"county"</span>:<span style="color: #c5937c;">"Denver"</span>, <span style="color: #c5937c;">"registered_voters"</span>:<span style="color: #BBCCAA; font-weight: bold;">463353</span>})
+voting_data.append({<span style="color: #c5937c;">"county"</span>:<span style="color: #c5937c;">"Jefferson"</span>, <span style="color: #c5937c;">"registered_voters"</span>:<span style="color: #BBCCAA; font-weight: bold;">432438</span>})
+<span style="color: #CC88CC;">print</span>(voting_data)
+</pre>
+</div>
+
+<pre class="example">
+[{'county': 'Arapahoe', 'registered_voters': 422829}, {'county': 'Denver', 'registered_voters': 463353}, {'county': 'Jefferson', 'registered_voters': 432438}]
+</pre>
+
+
+<p>
+The previous dictionary is the equivalent of this table.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">county</th>
+<th scope="col" class="org-right">registered<sub>voters</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Arapahoe</td>
+<td class="org-right">422829</td>
+</tr>
+
+<tr>
+<td class="org-left">Denver</td>
+<td class="org-right">463353</td>
+</tr>
+
+<tr>
+<td class="org-left">Jefferson</td>
+<td class="org-right">432438</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">voting_data</span> = [{<span style="color: #c5937c;">'county'</span>: <span style="color: #c5937c;">'Arapahoe'</span>, <span style="color: #c5937c;">'registered_voters'</span>: <span style="color: #BBCCAA; font-weight: bold;">422829</span>}, {<span style="color: #c5937c;">'county'</span>: <span style="color: #c5937c;">'Denver'</span>, <span style="color: #c5937c;">'registered_voters'</span>: <span style="color: #BBCCAA; font-weight: bold;">463353</span>}, {<span style="color: #c5937c;">'county'</span>: <span style="color: #c5937c;">'Jefferson'</span>, <span style="color: #c5937c;">'registered_voters'</span>: <span style="color: #BBCCAA; font-weight: bold;">432438</span>}]
+
+voting_data.insert(<span style="color: #BBCCAA; font-weight: bold;">1</span>, {<span style="color: #c5937c;">"county"</span>:<span style="color: #c5937c;">"El Paso"</span>, <span style="color: #c5937c;">"registered_voters"</span>:<span style="color: #BBCCAA; font-weight: bold;">461149</span>})
+<span style="color: #a9dbfa;">arapahoe</span> = voting_data.pop(<span style="color: #BBCCAA; font-weight: bold;">0</span>)
+<span style="color: #a9dbfa;">denver</span> = voting_data[<span style="color: #BBCCAA; font-weight: bold;">1</span>]
+<span style="color: #a9dbfa;">jefferson</span> = voting_data[<span style="color: #BBCCAA; font-weight: bold;">2</span>]
+<span style="color: #a9dbfa;">voting_data</span>[<span style="color: #BBCCAA; font-weight: bold;">2</span>] = denver
+<span style="color: #a9dbfa;">voting_data</span>[<span style="color: #BBCCAA; font-weight: bold;">1</span>] = jefferson
+voting_data.append(arapahoe)
+<span style="color: #CC88CC;">print</span>(voting_data)
+</pre>
+</div>
+
+<pre class="example">
+[{'county': 'El Paso', 'registered_voters': 461149}, {'county': 'Jefferson', 'registered_voters': 432438}, {'county': 'Denver', 'registered_voters': 463353}, {'county': 'Arapahoe', 'registered_voters': 422829}]
+</pre>
+
+
+<p>
+For more info on dictionaries and built-in Python functions, we can go to the documentation <sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9bbb528" class="outline-2">
+<h2 id="org9bbb528"><span class="section-number-2">8.</span> Decision Statements</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+If statements represent different paths in a flow chart. Where if the statement is true, false or equal, we proceed with the following block of code.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">counties</span> = [<span style="color: #c5937c;">"Arapahoe"</span>, <span style="color: #c5937c;">"Denver"</span>, <span style="color: #c5937c;">"Jefferson"</span>]
+<span style="color: #3399DD;">if</span> counties[<span style="color: #BBCCAA; font-weight: bold;">1</span>] == <span style="color: #c5937c;">"Denver"</span>:
+    <span style="color: #CC88CC;">print</span>(counties[<span style="color: #BBCCAA; font-weight: bold;">1</span>])
+</pre>
+</div>
+
+<pre class="example">
+Denver
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">temperature</span> = <span style="color: #BBCCAA; font-weight: bold;">79</span>
+<span style="color: #3399DD;">if</span> temperature &gt; <span style="color: #BBCCAA; font-weight: bold;">80</span>:
+    <span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"Hot"</span>)
+<span style="color: #3399DD;">else</span>:
+    <span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"Not so hot."</span>)
+</pre>
+</div>
+
+<pre class="example">
+Not so hot.
+</pre>
+</div>
+
+<div id="outline-container-org30b6900" class="outline-3">
+<h3 id="org30b6900"><span class="section-number-3">8.1.</span> Nested if statements</h3>
+<div class="outline-text-3" id="text-8-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">score</span> = <span style="color: #BBCCAA; font-weight: bold;">85</span>
+<span style="color: #3399DD;">if</span> score &gt;= <span style="color: #BBCCAA; font-weight: bold;">90</span>:
+    <span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"Your grade is A"</span>)
+<span style="color: #3399DD;">else</span>:
+    <span style="color: #3399DD;">if</span> score &gt;= <span style="color: #BBCCAA; font-weight: bold;">80</span>:
+        <span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"Your grade is B"</span>)
+    <span style="color: #3399DD;">else</span>:
+        ...
+</pre>
+</div>
+
+<pre class="example">
+Your grade is B
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3c22e4b" class="outline-3">
+<h3 id="org3c22e4b"><span class="section-number-3">8.2.</span> Elif</h3>
+<div class="outline-text-3" id="text-8-2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">score</span> = <span style="color: #BBCCAA; font-weight: bold;">90</span>
+<span style="color: #3399DD;">if</span> score &gt;= <span style="color: #BBCCAA; font-weight: bold;">90</span>:
+    <span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"Grade is A"</span>)
+<span style="color: #3399DD;">elif</span> score &gt;= <span style="color: #BBCCAA; font-weight: bold;">80</span>:
+    <span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"Grade is B"</span>)
+<span style="color: #3399DD;">elif</span> score &gt;= <span style="color: #BBCCAA; font-weight: bold;">70</span>:
+    <span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"Grade is C"</span>)
+<span style="color: #3399DD;">else</span>:
+    ...
+</pre>
+</div>
+
+<pre class="example">
+Grade is A
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgb9e1db2" class="outline-3">
+<h3 id="orgb9e1db2"><span class="section-number-3">8.3.</span> Logical Operators</h3>
+<div class="outline-text-3" id="text-8-3">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">counties</span> = [<span style="color: #c5937c;">"Arapahoe"</span>, <span style="color: #c5937c;">"Denver"</span>, <span style="color: #c5937c;">"Jefferson"</span>]
+<span style="color: #3399DD;">if</span> <span style="color: #c5937c;">"El Paso"</span> <span style="color: #3399DD;">in</span> counties:
+    <span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"El Paso is in the list."</span>)
+<span style="color: #3399DD;">else</span>:
+    <span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"El Paso is not in the list."</span>)
+
+<span style="color: #3399DD;">if</span> <span style="color: #c5937c;">"Arapahoe"</span> <span style="color: #3399DD;">in</span> counties <span style="color: #3399DD;">and</span> <span style="color: #c5937c;">"El Paso"</span> <span style="color: #3399DD;">in</span> counties:
+    <span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"Both in list."</span>)
+<span style="color: #3399DD;">else</span>:
+    <span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"Either one is not in the list."</span>)
+
+<span style="color: #3399DD;">if</span> <span style="color: #c5937c;">"Arapahoe"</span> <span style="color: #3399DD;">in</span> counties <span style="color: #3399DD;">or</span> <span style="color: #c5937c;">"El Paso"</span> <span style="color: #3399DD;">in</span> counties:
+    <span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"One of them in the list."</span>)
+<span style="color: #3399DD;">else</span>:
+    <span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"None of them in the list."</span>)
+
+ <span style="color: #3399DD;">if</span> <span style="color: #c5937c;">"Arapahoe"</span> <span style="color: #3399DD;">in</span> counties <span style="color: #3399DD;">and</span> <span style="color: #c5937c;">"El Paso"</span> <span style="color: #3399DD;">not</span> <span style="color: #3399DD;">in</span> counties:
+    <span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"Arpahoe is but El Paso isn't."</span>)
+<span style="color: #3399DD;">else</span>:
+    ...
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgddd0254" class="outline-2">
+<h2 id="orgddd0254"><span class="section-number-2">9.</span> Loops</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+A single instruction that is repeated multiple times.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">x</span> = <span style="color: #BBCCAA; font-weight: bold;">0</span>
+<span style="color: #3399DD;">while</span> x &lt;= <span style="color: #BBCCAA; font-weight: bold;">3</span>:
+    <span style="color: #CC88CC;">print</span>(x)
+    <span style="color: #a9dbfa;">x</span> += <span style="color: #BBCCAA; font-weight: bold;">1</span>
+</pre>
+</div>
+
+<pre class="example">
+0
+1
+2
+3
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">numbers</span> = [<span style="color: #BBCCAA; font-weight: bold;">0</span>, <span style="color: #BBCCAA; font-weight: bold;">1</span>, <span style="color: #BBCCAA; font-weight: bold;">2</span>, <span style="color: #BBCCAA; font-weight: bold;">3</span>]
+<span style="color: #3399DD;">for</span> number <span style="color: #3399DD;">in</span> <span style="color: #a9dbfa;">numbers</span>:
+    <span style="color: #CC88CC;">print</span>(number)
+
+<span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"Now with a range."</span>)
+<span style="color: #3399DD;">for</span> n <span style="color: #3399DD;">in</span> <span style="color: #CC88CC;">range</span>(<span style="color: #BBCCAA; font-weight: bold;">4</span>):
+    <span style="color: #CC88CC;">print</span>(n)
+
+num_dict = {<span style="color: #c5937c;">"a"</span>:<span style="color: #BBCCAA; font-weight: bold;">0</span>, <span style="color: #c5937c;">"b"</span>:<span style="color: #BBCCAA; font-weight: bold;">1</span>, <span style="color: #c5937c;">"c"</span>:<span style="color: #BBCCAA; font-weight: bold;">2</span>, <span style="color: #c5937c;">"d"</span>:<span style="color: #BBCCAA; font-weight: bold;">3</span>}
+<span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"Now over dict keys."</span>)
+<span style="color: #3399DD;">for</span> k <span style="color: #3399DD;">in</span> num_dict:
+    <span style="color: #CC88CC;">print</span>(k, num_dict[k])
+</pre>
+</div>
+
+<pre class="example" id="org2b27c3d">
+0
+1
+2
+3
+Now with a range.
+0
+1
+2
+3
+Now over dict keys.
+a 0
+b 1
+c 2
+d 3
+</pre>
+</div>
+
+<div id="outline-container-org8941f7e" class="outline-3">
+<h3 id="org8941f7e"><span class="section-number-3">9.1.</span> Iterating over Dictionaries</h3>
+<div class="outline-text-3" id="text-9-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">data</span> = [{<span style="color: #c5937c;">'county'</span>: <span style="color: #c5937c;">'Arapahoe'</span>, <span style="color: #c5937c;">'registered_voters'</span>: <span style="color: #BBCCAA; font-weight: bold;">422829</span>}, {<span style="color: #c5937c;">'county'</span>: <span style="color: #c5937c;">'Denver'</span>, <span style="color: #c5937c;">'registered_voters'</span>: <span style="color: #BBCCAA; font-weight: bold;">463353</span>}, {<span style="color: #c5937c;">'county'</span>: <span style="color: #c5937c;">'Jefferson'</span>, <span style="color: #c5937c;">'registered_voters'</span>: <span style="color: #BBCCAA; font-weight: bold;">432438</span>}]
+<span style="color: #3399DD;">for</span> i <span style="color: #3399DD;">in</span> <span style="color: #CC88CC;">range</span>(<span style="color: #CC88CC;">len</span>(data)):
+    <span style="color: #CC88CC;">print</span>(data[i][<span style="color: #c5937c;">"county"</span>])
+    <span style="color: #CC88CC;">print</span>(data[i][<span style="color: #c5937c;">"registered_voters"</span>])
+</pre>
+</div>
+
+<pre class="example">
+Arapahoe
+422829
+Denver
+463353
+Jefferson
+432438
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgae6114f" class="outline-2">
+<h2 id="orgae6114f"><span class="section-number-2">10.</span> F-Strings and Printing</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+Printing with f-strings
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">counties_dict</span> = {<span style="color: #c5937c;">"Arapahoe"</span>: <span style="color: #BBCCAA; font-weight: bold;">369237</span>, <span style="color: #c5937c;">"Denver"</span>:<span style="color: #BBCCAA; font-weight: bold;">413229</span>, <span style="color: #c5937c;">"Jefferson"</span>: <span style="color: #BBCCAA; font-weight: bold;">390222</span>}
+<span style="color: #3399DD;">for</span> county, voters <span style="color: #3399DD;">in</span> counties_dict.items():
+    <span style="color: #CC88CC;">print</span>(f<span style="color: #c5937c;">"</span>{county}<span style="color: #c5937c;"> county has </span>{voters}<span style="color: #c5937c;"> registered voters"</span>)
+</pre>
+</div>
+
+<pre class="example">
+Arapahoe county has 369237 registered voters
+Denver county has 413229 registered voters
+Jefferson county has 390222 registered voters
+</pre>
+
+
+<p>
+Point decimals formatting1.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a9dbfa;">candidate_votes</span> = <span style="color: #BBCCAA; font-weight: bold;">313123</span>
+<span style="color: #a9dbfa;">total_votes</span> = <span style="color: #BBCCAA; font-weight: bold;">1203920</span>
+<span style="color: #CC88CC;">print</span>(f<span style="color: #c5937c;">"You received </span>{candidate_votes / total_votes * 100:.2f}<span style="color: #c5937c;">% of the total votes."</span>)
+</pre>
+</div>
+
+<pre class="example">
+You received 26.01% of the total votes.
+</pre>
+</div>
+</div>
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
@@ -625,12 +987,16 @@ counties.append(<span style="color: #c5937c;">"Arapahoe"</span>)
 <a href="https://peps.python.org/pep-0008/">https://peps.python.org/pep-0008/</a>
 </p></div></div>
 
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3" role="doc-backlink">3</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="https://docs.python.org/3.7/library/functions.html">https://docs.python.org/3.7/library/functions.html</a>
+</p></div></div>
+
 
 </div>
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Alberto Valdez</p>
-<p class="date">Created: 2022-07-18 Mon 18:39</p>
+<p class="date">Created: 2022-07-18 Mon 19:24</p>
 </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-07-14 Thu 22:17 -->
+<!-- 2022-07-18 Mon 19:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python Logic and Files</title>
@@ -23,18 +23,18 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2fa2421">1. Conditional Statements</a>
+<li><a href="#org3667f79">1. Conditional Statements</a>
 <ul>
-<li><a href="#org43ff7b5">1.1. Logical Operators</a></li>
-<li><a href="#orgba70cb9">1.2. Nested and Elif</a></li>
-<li><a href="#org45274f9">1.3. Logical Matrices</a></li>
+<li><a href="#org46aa7aa">1.1. Logical Operators</a></li>
+<li><a href="#org962b0aa">1.2. Nested and Elif</a></li>
+<li><a href="#org019e456">1.3. Logical Matrices</a></li>
 </ul>
 </li>
-<li><a href="#orgb5cba13">2. Activity Rock, Paper Scissors.</a></li>
-<li><a href="#org8bc2e89">3. Loops</a></li>
-<li><a href="#org4c38ad9">4. Activity Number Chain</a></li>
-<li><a href="#org96b2485">5. Reading and Writing Files</a></li>
-<li><a href="#org93385b2">6. Office hours.</a></li>
+<li><a href="#org29c7d90">2. Activity Rock, Paper Scissors.</a></li>
+<li><a href="#org9a13ee4">3. Loops</a></li>
+<li><a href="#org37cac08">4. Activity Number Chain</a></li>
+<li><a href="#orgc13f304">5. Reading and Writing Files</a></li>
+<li><a href="#org5db9ce0">6. Office hours.</a></li>
 </ul>
 </div>
 </div>
@@ -55,8 +55,8 @@
 Notes taken during class.
 </p>
 
-<div id="outline-container-org2fa2421" class="outline-2">
-<h2 id="org2fa2421"><span class="section-number-2">1.</span> Conditional Statements</h2>
+<div id="outline-container-org3667f79" class="outline-2">
+<h2 id="org3667f79"><span class="section-number-2">1.</span> Conditional Statements</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Python requires indentation after the <code>:</code> operator, which means &ldquo;this is a block of code&rdquo;. So we can nest blocks with indentation.
@@ -80,8 +80,8 @@ Most editors will render tabs as 4 spaces, most allow you to edit that setting.
 </p>
 </div>
 
-<div id="outline-container-org43ff7b5" class="outline-3">
-<h3 id="org43ff7b5"><span class="section-number-3">1.1.</span> Logical Operators</h3>
+<div id="outline-container-org46aa7aa" class="outline-3">
+<h3 id="org46aa7aa"><span class="section-number-3">1.1.</span> Logical Operators</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #a9dbfa;">x</span> = <span style="color: #BBCCAA; font-weight: bold;">1</span>
@@ -101,8 +101,8 @@ One or more statements are true.
 </div>
 </div>
 
-<div id="outline-container-orgba70cb9" class="outline-3">
-<h3 id="orgba70cb9"><span class="section-number-3">1.2.</span> Nested and Elif</h3>
+<div id="outline-container-org962b0aa" class="outline-3">
+<h3 id="org962b0aa"><span class="section-number-3">1.2.</span> Nested and Elif</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 These are the possible ways to evaluate logic in Python:
@@ -155,8 +155,8 @@ You can have as many <code>Elif</code> instances as you want. You can check out 
 </div>
 </div>
 
-<div id="outline-container-org45274f9" class="outline-3">
-<h3 id="org45274f9"><span class="section-number-3">1.3.</span> Logical Matrices</h3>
+<div id="outline-container-org019e456" class="outline-3">
+<h3 id="org019e456"><span class="section-number-3">1.3.</span> Logical Matrices</h3>
 <div class="outline-text-3" id="text-1-3">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -231,8 +231,8 @@ You can have as many <code>Elif</code> instances as you want. You can check out 
 </div>
 </div>
 
-<div id="outline-container-orgb5cba13" class="outline-2">
-<h2 id="orgb5cba13"><span class="section-number-2">2.</span> Activity Rock, Paper Scissors.</h2>
+<div id="outline-container-org29c7d90" class="outline-2">
+<h2 id="org29c7d90"><span class="section-number-2">2.</span> Activity Rock, Paper Scissors.</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Let&rsquo;s play rock, paper scissors!
@@ -251,7 +251,7 @@ Assumming that.
 Then we can use this nested conditional.
 </p>
 <div class="org-src-container">
-<pre class="src src-python" id="orgb6ed1f1"><span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"Let's Play Rock Paper Scissors!"</span>)
+<pre class="src src-python" id="org5ddee41"><span style="color: #CC88CC;">print</span>(<span style="color: #c5937c;">"Let's Play Rock Paper Scissors!"</span>)
 <span style="color: #a9dbfa;">options</span> = [<span style="color: #c5937c;">"r"</span>, <span style="color: #c5937c;">"p"</span>, <span style="color: #c5937c;">"s"</span>]
 
 <span style="color: #3399DD;">if</span> user_choice == <span style="color: #c5937c;">"r"</span>:
@@ -312,8 +312,8 @@ You chose s. I chose p.
 </div>
 
 
-<div id="outline-container-org8bc2e89" class="outline-2">
-<h2 id="org8bc2e89"><span class="section-number-2">3.</span> Loops</h2>
+<div id="outline-container-org9a13ee4" class="outline-2">
+<h2 id="org9a13ee4"><span class="section-number-2">3.</span> Loops</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Python will only iterate over a list, so we can generate one list on the fly. Using the <code>range</code> keyword.
@@ -369,8 +369,8 @@ run! 2
 </div>
 </div>
 
-<div id="outline-container-org4c38ad9" class="outline-2">
-<h2 id="org4c38ad9"><span class="section-number-2">4.</span> Activity Number Chain</h2>
+<div id="outline-container-org37cac08" class="outline-2">
+<h2 id="org37cac08"><span class="section-number-2">4.</span> Activity Number Chain</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Let&rsquo;s assume we can start with these values.
@@ -386,7 +386,7 @@ Let&rsquo;s assume we can start with these values.
 Then we can run the code.
 </p>
 <div class="org-src-container">
-<pre class="src src-python" id="org6e3ad31"><span style="color: #3399DD;">while</span> user_play == <span style="color: #c5937c;">"y"</span>:
+<pre class="src src-python" id="org861562d"><span style="color: #3399DD;">while</span> user_play == <span style="color: #c5937c;">"y"</span>:
     <span style="color: #3399DD;">for</span> i <span style="color: #3399DD;">in</span> <span style="color: #CC88CC;">range</span>(<span style="color: #BBCCAA; font-weight: bold;">1</span>, user_number + <span style="color: #BBCCAA; font-weight: bold;">1</span>):
         <span style="color: #CC88CC;">print</span>(f<span style="color: #c5937c;">"</span>{i + saved_number}<span style="color: #c5937c;">"</span>)
     saved_number = saved_number + user_number
@@ -429,14 +429,14 @@ We were able to continue the sequence because we stored the last number in the <
 </div>
 </div>
 
-<div id="outline-container-org96b2485" class="outline-2">
-<h2 id="org96b2485"><span class="section-number-2">5.</span> Reading and Writing Files</h2>
+<div id="outline-container-orgc13f304" class="outline-2">
+<h2 id="orgc13f304"><span class="section-number-2">5.</span> Reading and Writing Files</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Let&rsquo;s move to the working directory.
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #33CCAA;">cd</span> ./material/3-2-Student-Resources/09-Evr_WritingNetflixData
+<pre class="src src-shell"><span style="color: #33CCAA;">cd</span> ./resources/3-2-Student-Resources/09-Evr_WritingNetflixData
 <span style="color: #33CCAA;">echo</span> <span style="color: #c5937c;">"---this is the path---"</span>
 <span style="color: #33CCAA;">pwd</span>
 <span style="color: #33CCAA;">echo</span> <span style="color: #c5937c;">"---these are the files in the path---"</span>
@@ -446,7 +446,7 @@ Let&rsquo;s move to the working directory.
 
 <div class="org-src-container">
 <pre class="src src-org">---this is the path---
-/Users/albertovaldez/tec-data/tec-data-03-python/material/3-2-Student-Resources/09-Evr_WritingNetflixData
+/Users/albertovaldez/tec-data/03-python/resources/3-2-Student-Resources/09-Evr_WritingNetflixData
 ---these are the files in the path---
 README.md
 Resources
@@ -524,7 +524,7 @@ So we need a for loop and then use <code>[0]</code> to index the first column, w
 Let&rsquo;s use the <code>os</code> and <code>csv</code> modules in order to both read and write the files.
 </p>
 <div class="org-src-container">
-<pre class="src src-python" id="orgd8da0f2"><span style="color: #3399DD;">import</span> os
+<pre class="src src-python" id="orgc25f95b"><span style="color: #3399DD;">import</span> os
 <span style="color: #3399DD;">import</span> csv
 
 <span style="color: #a9dbfa;">csvpath</span> = os.path.join(<span style="color: #c5937c;">"resources"</span>, <span style="color: #c5937c;">"netflix_ratings.csv"</span>)
@@ -600,8 +600,8 @@ Extra tip: We can empty the .txt file with this command.
 </div>
 </div>
 
-<div id="outline-container-org93385b2" class="outline-2">
-<h2 id="org93385b2"><span class="section-number-2">6.</span> Office hours.</h2>
+<div id="outline-container-org5db9ce0" class="outline-2">
+<h2 id="org5db9ce0"><span class="section-number-2">6.</span> Office hours.</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Make sure you are in the right directory!
@@ -621,7 +621,7 @@ Make sure you are in the right directory!
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Alberto Valdez</p>
-<p class="date">Created: 2022-07-14 Thu 22:17</p>
+<p class="date">Created: 2022-07-18 Mon 19:24</p>
 </div>
 </body>
 </html>

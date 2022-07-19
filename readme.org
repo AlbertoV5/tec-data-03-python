@@ -365,11 +365,223 @@ print(counties.get("Denver"))
 : dict_values([422829, 463353, 432438])
 : 463353
 
+List of dictionaries.
+#+begin_src python
+voting_data = []
+voting_data.append({"county":"Arapahoe", "registered_voters":422829})
+voting_data.append({"county":"Denver", "registered_voters":463353})
+voting_data.append({"county":"Jefferson", "registered_voters":432438})
+print(voting_data)
+#+end_src
+
+#+RESULTS:
+: [{'county': 'Arapahoe', 'registered_voters': 422829}, {'county': 'Denver', 'registered_voters': 463353}, {'county': 'Jefferson', 'registered_voters': 432438}]
+
+The previous dictionary is the equivalent of this table.
+
+| county    | registered_voters |
+|-----------+-------------------|
+| Arapahoe  |            422829 |
+| Denver    |            463353 |
+| Jefferson |            432438 |
+
+#+begin_src python
+voting_data = [{'county': 'Arapahoe', 'registered_voters': 422829}, {'county': 'Denver', 'registered_voters': 463353}, {'county': 'Jefferson', 'registered_voters': 432438}]
+
+voting_data.insert(1, {"county":"El Paso", "registered_voters":461149})
+arapahoe = voting_data.pop(0)
+denver = voting_data[1]
+jefferson = voting_data[2]
+voting_data[2] = denver
+voting_data[1] = jefferson
+voting_data.append(arapahoe)
+print(voting_data)
+#+end_src
+
+#+RESULTS:
+: [{'county': 'El Paso', 'registered_voters': 461149}, {'county': 'Jefferson', 'registered_voters': 432438}, {'county': 'Denver', 'registered_voters': 463353}, {'county': 'Arapahoe', 'registered_voters': 422829}]
+
+For more info on dictionaries and built-in Python functions, we can go to the documentation [fn:3].
+
+* Decision Statements
+
+If statements represent different paths in a flow chart. Where if the statement is true, false or equal, we proceed with the following block of code.
+
+#+begin_src python
+counties = ["Arapahoe", "Denver", "Jefferson"]
+if counties[1] == "Denver":
+    print(counties[1])
+#+end_src
+
+#+RESULTS:
+: Denver
+
+#+begin_src python
+temperature = 79
+if temperature > 80:
+    print("Hot")
+else:
+    print("Not so hot.")
+#+end_src
+
+#+RESULTS:
+: Not so hot.
+
+** Nested if statements
+
+#+begin_src python
+score = 85
+if score >= 90:
+    print("Your grade is A")
+else:
+    if score >= 80:
+        print("Your grade is B")
+    else:
+        ...
+#+end_src
+
+#+RESULTS:
+: Your grade is B
+
+** Elif
+
+#+begin_src python
+score = 90
+if score >= 90:
+    print("Grade is A")
+elif score >= 80:
+    print("Grade is B")
+elif score >= 70:
+    print("Grade is C")
+else:
+    ...
+#+end_src
+
+#+RESULTS:
+: Grade is A
+
+** Logical Operators
+
+#+begin_src python
+counties = ["Arapahoe", "Denver", "Jefferson"]
+if "El Paso" in counties:
+    print("El Paso is in the list.")
+else:
+    print("El Paso is not in the list.")
+
+if "Arapahoe" in counties and "El Paso" in counties:
+    print("Both in list.")
+else:
+    print("Either one is not in the list.")
+
+if "Arapahoe" in counties or "El Paso" in counties:
+    print("One of them in the list.")
+else:
+    print("None of them in the list.")
+
+ if "Arapahoe" in counties and "El Paso" not in counties:
+    print("Arpahoe is but El Paso isn't.")
+else:
+    ...
+
+#+end_src
+
+* Loops
+
+A single instruction that is repeated multiple times.
+#+begin_src python
+x = 0
+while x <= 3:
+    print(x)
+    x += 1
+#+end_src
+
+#+RESULTS:
+: 0
+: 1
+: 2
+: 3
+
+#+begin_src python
+numbers = [0, 1, 2, 3]
+for number in numbers:
+    print(number)
+
+print("Now with a range.")
+for n in range(4):
+    print(n)
+
+num_dict = {"a":0, "b":1, "c":2, "d":3}
+print("Now over dict keys.")
+for k in num_dict:
+    print(k, num_dict[k])
+#+end_src
+
+#+RESULTS:
+#+begin_example
+0
+1
+2
+3
+Now with a range.
+0
+1
+2
+3
+Now over dict keys.
+a 0
+b 1
+c 2
+d 3
+#+end_example
+
+** Iterating over Dictionaries
+
+#+begin_src python
+data = [{'county': 'Arapahoe', 'registered_voters': 422829}, {'county': 'Denver', 'registered_voters': 463353}, {'county': 'Jefferson', 'registered_voters': 432438}]
+for i in range(len(data)):
+    print(data[i]["county"])
+    print(data[i]["registered_voters"])
+#+end_src
+
+#+RESULTS:
+: Arapahoe
+: 422829
+: Denver
+: 463353
+: Jefferson
+: 432438
+
+* F-Strings and Printing
+
+Printing with f-strings
+#+begin_src python
+counties_dict = {"Arapahoe": 369237, "Denver":413229, "Jefferson": 390222}
+for county, voters in counties_dict.items():
+    print(f"{county} county has {voters} registered voters")
+#+end_src
+
+#+RESULTS:
+: Arapahoe county has 369237 registered voters
+: Denver county has 413229 registered voters
+: Jefferson county has 390222 registered voters
+
+Point decimals formatting1.
+#+begin_src python
+candidate_votes = 313123
+total_votes = 1203920
+print(f"You received {candidate_votes / total_votes * 100:.2f}% of the total votes.")
+#+end_src
+
+#+RESULTS:
+: You received 26.01% of the total votes.
 
 
 
 
 * Footnotes
+
+[fn:3]https://docs.python.org/3.7/library/functions.html
 [fn:2]https://peps.python.org/pep-0008/
 
 [fn:1]https://en.wikipedia.org/wiki/Snake_case
