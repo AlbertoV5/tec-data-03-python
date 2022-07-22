@@ -1,590 +1,159 @@
-#+title:    Python Fundamentals
+#+title:    Week 3 Challenge
 #+author:   Alberto Valdez
 #+email:    avq5ac1@gmail.com
-#+SETUPFILE: https://albertov5.github.io/org-html-themes/org/theme-readtheorg.setup
+#+SETUPFILE: ./org.setup
 #+PROPERTY: header-args :mkdirp yes :dir . :exports both
-#+PROPERTY: header-args:shell :results drawer :wrap example :results silent
-#+PROPERTY: header-args:python :exports both :results output replace
-#+INCLUDE: ./publish.inc
+#+PROPERTY: header-args:shell :results drawer :wrap example :exports both :results silent
+#+PROPERTY: header-args:python :exports both :results value org output replace :session Python
 
+[[https://github.com/AlbertoV5/tec-data-03-python][Repository]]
 
-| [[https://albertov5.github.io/tec-data][<<<Home]] | [[./lesson-1.org][Lesson-1]] | [[./lesson-2.org][Lesson-2]] | [[./challenge/readme.org][Challenge>>>]] |
+* PyPoll Election Audit
 
-[[https://github.com/albertov5/tec-data-03-python][Repository]]
+In this project, we were given the task to find the results of an election by counting the votes in a large dataset. We were also looking for the following data:
 
+1. Total number of votes.
+2. List of candidates who received votes.
+3. Number of votes per candidate and their percentage.
+4. List of counties that had vote turnouts.
+5. County with the largest amount of vote turnouts.
 
-* Introduction
+We designed an algorithm that would do the work for us by feeding it a csv file and storing the results in a text file.
 
-Python is one of the most popular languages in the world, used in many industries to accomplish different goals. It's very easy to use, as you can focus on the problem and not the intricacies of the language.
-
-Here is a YouTube playlist of keynotes that I've collected over the past month while practicing and studying Python:
-
-#+begin_export html
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLdswL3Tb01gznKrZf0_XeOc6ftUO3yZhn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-#+end_export
-
------------------------
-
-**   Git
-
-Version control tool that will allow us to interact with GitHub from the Terminal.
-
-Installing homebrew
-
-=/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"=
-
-Installing git
-
-=brew install git=
-
-=brew install git-lfs=
-
-Checking versions
-#+NAME: git_version
-#+begin_src shell
-git --version
-#+end_src
-#+CALL: git_version()
-
-#+NAME: git_lfs_version
-#+begin_src shell
-git-lfs --version
-#+end_src
-#+CALL: git_lfs_version()
-
-* Python
-
-#+NAME: pyenv_version_name
-#+begin_src shell :exports none
-pyenv version-name
-#+end_src
-
-We can check the version with:
+** Resources
 
 #+NAME: python_version
-#+begin_src shell
+#+begin_src shell :exports none
 python --version
 #+end_src
-#+CALL: python_version()
 
-We can run an interactive Python REPL from the terminal with:
-#+NAME: python_repl
-#+begin_src shell
-python
+#+NAME: vscode_version
+#+begin_src shell :exports none
+code --version | head -n 1
 #+end_src
 
+Python version: call_python_version() VS Code version: call_vscode_version().
 
-** Python versions - End of life
-[[https://endoflife.date/python][End of life]] is a website that shows the dates of when a Python version is not longer receiving security updates. For example:
+Dataset: =election_results.csv=.
 
-| Version | Released    | End of life |
-|---------+-------------+-------------|
-|     3.7 | 26 Jun 2018 | 27 Jun 2023 |
-|     2.7 | 03 Jul 2020 | 01 Jan 2020 |
+** Election Audit Results
 
-The Python version is best chosen depending on the libraries you are planning on using, and most of the time the better supported versions are the ones released 2+ years ago.
+We found out that the there were =369,711= votes registered, from which =82.8%= came from Denver, the rest came from Jefferson =(10.5%)= and Arapahoe =(6.7%)=.
 
+The winner of the election was =Diana DeGetter= with =73.8%= of the vote. These are the rest of the results:
 
-* Working with Python files
+| Candidate               | Votes   | Percentage |
+|-------------------------+---------+------------|
+| Raymond Anthony Doane   | 11,606  |       3.1% |
+| Charles Casper Stockham | 85,212  |      23.0% |
+| Diana DeGette           | 272,892 |      73.8% |
 
-** Creating a file from the Terminal
-
-Let's list our working directory.
+The following data was stored to the =election_analysis.txt= file.
 
 #+begin_src shell :results output replace
-ls
+cat election_analysis.txt
 #+end_src
 
 #+RESULTS:
 #+begin_example
-LICENSE
-challenge
-index.html
-lesson-1.html
-lesson-1.md
-lesson-1.org
-lesson-2.html
-lesson-2.md
-lesson-2.org
-publish.inc
-readme.html
-readme.md
-readme.org
-resources
+
+Election Results
+-------------------------
+Total Votes: 369,711
+-------------------------
+
+County Votes:
+Jefferson: 10.5% (38,855)
+Denver: 82.8% (306,055)
+Arapahoe: 6.7% (24,801)
+
+-------------------------
+Largest County Turnout: Denver
+-------------------------
+Charles Casper Stockham: 23.0% (85,213)
+Diana DeGette: 73.8% (272,892)
+Raymon Anthony Doane: 3.1% (11,606)
+-------------------------
+Winner: Diana DeGette
+Winning Vote Count: 272,892
+Winning Percentage: 73.8%
+-------------------------
 #+end_example
 
-We can create a new Python file in the resources directory.
 
-#+begin_src shell
-touch resources/hello_world.py
-#+end_src
+** Summary of the Python Problem
 
-** Editing a file
+The following is a partial description of how to solve the problem using Python.
 
-Start working in the current directory.
-#+begin_src shell
-code .
-#+end_src
-
-We can use =Shift+P= in VS Code to open a file. Then find out =hello_world.py= file and input some Python code.
-
+Importing the libraries and loading the data.
 #+begin_src python :results silent
-print("Hello Wold!")
+import csv
+from pathlib import Path
+
+resources = Path.cwd() / "resources"
+file_to_load = resources / "election_results.csv"
+file_to_save = Path.cwd() / "election_analysis.txt"
 #+end_src
 
-In VSCode we can use =Shift-Cmd-P= and search for the =Python: Select Interpreter= command to make sure we are working with the Python version we want to work with.
-
-** Running a file
-
-#+begin_src shell :results output replace
-python resources/hello_world.py
+Initializing variables.
+#+begin_src python :results silent
+candidate_list = []
+county_list = []
+candidate_votes = {}
+county_votes = {}
 #+end_src
 
-#+RESULTS:
-#+begin_example
-Hello World!
-#+end_example
+The most important part of the code was that we were able to check if the candidate name existed already in the dictionary, and if it didn't we would add it to the list only once and move on into just incrementing the vote count.
 
-* Python Types
-
-Determining the type of a variable or constant.
-
+This is a reduced example of the process.
 #+begin_src python
-print(type(2019))
-print(type(73.81))
-print(type("hello"))
-print(type(""))
-print(type(None))
-print(type(False))
-#+end_src
+with open(file_to_load) as election_data:
+    reader = csv.reader(election_data)
+    header = next(reader)
+    for row in reader:
+        candidate_name = row[2]
+        county_name = row[1]
+        # Check for candidate
+        if candidate_name not in candidate_list:
+            candidate_list.append(candidate_name)
+            candidate_votes[candidate_name] = 0
+        candidate_votes[candidate_name] += 1
+        # Check for county
+        if county_name not in county_list:
+            county_list.append(county_name)
+            county_votes[county_name] = 0
+        county_votes[county_name] += 1
 
-#+RESULTS:
-: <class 'int'>
-: <class 'float'>
-: <class 'str'>
-: <class 'str'>
-: <class 'NoneType'>
-: <class 'bool'>
-
-| Data Type           | Python Classification |
-|---------------------+-----------------------|
-| Integers            | <class 'int'>         |
-| Float point numbers | <class 'float'>       |
-| Strings             | <class 'str'>         |
-| Boolean             | <class 'bool'>        |
-
-** Creating a variable
-
-#+begin_src python
-num_candidates = 3
-winning_percentage = 73.81
-candidate = "Diane"
-won_election = True
-#+end_src
-
-There are a few naming conventions in Python, for example using snake case for variables [fn:1] or general style guides like PEP 8 [fn:2].
-
-** Keywords
-
-#+begin_src python :results value org output replace
-help("keywords")
+print(candidate_votes)
+print(county_votes)
 #+end_src
 
 #+RESULTS:
 #+begin_src org
-
-Here is a list of the Python keywords.  Enter any keyword to get more help.
-
-False               class               from                or
-None                continue            global              pass
-True                def                 if                  raise
-and                 del                 import              return
-as                  elif                in                  try
-assert              else                is                  while
-async               except              lambda              with
-await               finally             nonlocal            yield
-break               for                 not
-
+{'Charles Casper Stockham': 170426, 'Diana DeGette': 545784, 'Raymon Anthony Doane': 23212}
+{'Jefferson': 77710, 'Denver': 612110, 'Arapahoe': 49602}
 #+end_src
 
-** Python Operations
-| Operator | Meaning                                                                                                                                  | Use                      |
-|----------+------------------------------------------------------------------------------------------------------------------------------------------+--------------------------|
-| +        | Adds two numbers.                                                                                                                        | x + y                    |
-| –        | Subtracts one number from another.                                                                                                       | x – y                    |
-| *        | Multiplies two numbers.                                                                                                                  | x * y                    |
-| /        | Divides one number by another. This always results in a floating-point decimal number.                                                   | x / y                    |
-| %        | The “%” is known as the modulus When used in place of “/” it will divide one number by another and return the remainder of the division. | x % y (remainder of x/y) |
-| //       | Divides one number by another and returns an integer. This is known as floor division.                                                   | x // y                   |
-| **       | Raises a number to a power.                                                                                                              | x**y (x to the power y)  |
+Then after that storing the results was a simple process as we can do whatever we want with the data stored in the dictionaries.
 
-Order of operations must follow the order of precedence of mathematics.
-
+For example, printing the total votes or percentage of values from any key. As well as making sure that the totals match.
 #+begin_src python
-print(5 + 2 * 3)
-print(8 // 5 - 3)
-print(8 + 22 * 2 - 4)
-print(16 - 3 / 2 + 7 - 1)
-print(3 ** 3 % 5)
-print(5 + 9 * 3 / 2 - 4)
+total_votes_candidate = sum(candidate_votes.values())
+total_votes_county = sum(county_votes.values())
+assert total_votes_candidate == total_votes_county
+print(f"Total Votes: {total_votes_candidate}")
+print("Percentage for Diana DeGette:")
+print(f"{100 * candidate_votes['Diana DeGette'] / total_votes_candidate:.2f}%")
 #+end_src
 
 #+RESULTS:
-: 11
-: -2
-: 48
-: 20.5
-: 2
-: 14.5
-
-#+begin_src python
-print((5 + 2) * 3)
-print((8 //5) - 3)
-print((8 + (22 * (2 - 4))))
-print(16 - 3 / (2 + 7) - 1)
-print(3 ** (3 % 5))
+#+begin_src org
+Total Votes: 369711
+Percentage for Diana DeGette:
+73.81%
 #+end_src
 
-#+RESULTS:
-: 21
-: -2
-: -36
-: 14.666666666666666
-: 27
 
-#+begin_src python
-print(5 + (9 * 3 / 2 - 4))
-print(5 + (9 * 3 / (2 - 4)))
-#+end_src
+** Closing Thoughts
 
-#+RESULTS:
-: 14.5
-: -8.5
-
-
-* Python Lists
-
-A list is an array that contains multiple data items.
-
-#+begin_src python
-counties = ["Arapahoe", "Denver", "Jefferson"]
-print("This is the list:", counties)
-print("This is the first item:", counties[0])
-print("This is the last item:", counties[-1])
-print("This is the length of the list:", len(counties))
-print("This is a slice of the list:", counties[0:2])
-print("This is other way to slice:", counties[:2])
-#+end_src
-
-#+RESULTS:
-: This is the list: ['Arapahoe', 'Denver', 'Jefferson']
-: This is the first item: Arapahoe
-: This is the last item: Jefferson
-: This is the length of the list: 3
-: This is a slice of the list: ['Arapahoe', 'Denver']
-: This is other way to slice: ['Arapahoe', 'Denver']
-
-Appending items to a list.
-#+begin_src python
-counties = ["Arapahoe", "Denver", "Jefferson"]
-counties.append("El Paso")
-counties.insert(2, "El Paso")
-print("We added El Paso twice to the list.")
-print(counties)
-counties.remove("El Paso")
-print("We removed the first instance of El Paso.")
-print(counties)
-counties.pop(-1)
-print("We removed the last element in the list.")
-print(counties)
-#+end_src
-
-#+RESULTS:
-: We added El Paso twice to the list.
-: ['Arapahoe', 'Denver', 'El Paso', 'Jefferson', 'El Paso']
-: We removed the first instance of El Paso.
-: ['Arapahoe', 'Denver', 'Jefferson', 'El Paso']
-: We removed the last element in the list.
-: ['Arapahoe', 'Denver', 'Jefferson']
-
-Changing elements from a list.
-#+begin_src python
-counties = ["Arapahoe", "Denver", "Jefferson"]
-counties[2] = "El Paso"
-print("We replace index at 2 with El Paso.")
-print(counties)
-#+end_src
-
-#+RESULTS:
-: We replace index at 2 with El Paso.
-: ['Arapahoe', 'Denver', 'El Paso']
-
-Let's try it all together.
-#+begin_src python
-counties = ["Arapahoe", "Denver", "Jefferson"]
-counties.insert(1, "El Paso")
-counties.remove("Arapahoe")
-jefferson = counties[2]
-counties[2] = counties[1]
-counties[1] = jefferson
-counties.append("Arapahoe")
-print(counties)
-#+end_src
-
-#+RESULTS:
-: ['El Paso', 'Jefferson', 'Denver', 'Arapahoe']
-
-* Python Tuples
-
-Tuples are immutable data structures that contain one or more items.
-#+begin_src python
-counties = ("Arapahoe", "Denver", "Jefferson")
-print(counties[:-1])
-#+end_src
-
-#+RESULTS:
-: ('Arapahoe', 'Denver')
-
-* Python Dictionaries
-
-A dictionary is an object that stores a collection of data. It has a key and a value (key-value pairs).
-
-#+begin_src python
-counties = {}
-counties["Arapahoe"] = 422829
-print(counties)
-counties["Denver"] = 463353
-counties["Jefferson"] = 432438
-print(counties)
-print(counties.keys())
-print(counties.values())
-print(counties.get("Denver"))
-#+end_src
-
-#+RESULTS:
-: {'Arapahoe': 422829}
-: {'Arapahoe': 422829, 'Denver': 463353, 'Jefferson': 432438}
-: dict_keys(['Arapahoe', 'Denver', 'Jefferson'])
-: dict_values([422829, 463353, 432438])
-: 463353
-
-List of dictionaries.
-#+begin_src python
-voting_data = []
-voting_data.append({"county":"Arapahoe", "registered_voters":422829})
-voting_data.append({"county":"Denver", "registered_voters":463353})
-voting_data.append({"county":"Jefferson", "registered_voters":432438})
-print(voting_data)
-#+end_src
-
-#+RESULTS:
-: [{'county': 'Arapahoe', 'registered_voters': 422829}, {'county': 'Denver', 'registered_voters': 463353}, {'county': 'Jefferson', 'registered_voters': 432438}]
-
-The previous dictionary is the equivalent of this table.
-
-| county    | registered_voters |
-|-----------+-------------------|
-| Arapahoe  |            422829 |
-| Denver    |            463353 |
-| Jefferson |            432438 |
-
-#+begin_src python
-voting_data = [{'county': 'Arapahoe', 'registered_voters': 422829}, {'county': 'Denver', 'registered_voters': 463353}, {'county': 'Jefferson', 'registered_voters': 432438}]
-
-voting_data.insert(1, {"county":"El Paso", "registered_voters":461149})
-arapahoe = voting_data.pop(0)
-denver = voting_data[1]
-jefferson = voting_data[2]
-voting_data[2] = denver
-voting_data[1] = jefferson
-voting_data.append(arapahoe)
-print(voting_data)
-#+end_src
-
-#+RESULTS:
-: [{'county': 'El Paso', 'registered_voters': 461149}, {'county': 'Jefferson', 'registered_voters': 432438}, {'county': 'Denver', 'registered_voters': 463353}, {'county': 'Arapahoe', 'registered_voters': 422829}]
-
-For more info on dictionaries and built-in Python functions, we can go to the documentation [fn:3].
-
-* Decision Statements
-
-If statements represent different paths in a flow chart. Where if the statement is true, false or equal, we proceed with the following block of code.
-
-#+begin_src python
-counties = ["Arapahoe", "Denver", "Jefferson"]
-if counties[1] == "Denver":
-    print(counties[1])
-#+end_src
-
-#+RESULTS:
-: Denver
-
-#+begin_src python
-temperature = 79
-if temperature > 80:
-    print("Hot")
-else:
-    print("Not so hot.")
-#+end_src
-
-#+RESULTS:
-: Not so hot.
-
-** Nested if statements
-
-#+begin_src python
-score = 85
-if score >= 90:
-    print("Your grade is A")
-else:
-    if score >= 80:
-        print("Your grade is B")
-    else:
-        ...
-#+end_src
-
-#+RESULTS:
-: Your grade is B
-
-** Elif
-
-#+begin_src python
-score = 90
-if score >= 90:
-    print("Grade is A")
-elif score >= 80:
-    print("Grade is B")
-elif score >= 70:
-    print("Grade is C")
-else:
-    ...
-#+end_src
-
-#+RESULTS:
-: Grade is A
-
-** Logical Operators
-
-#+begin_src python
-counties = ["Arapahoe", "Denver", "Jefferson"]
-if "El Paso" in counties:
-    print("El Paso is in the list.")
-else:
-    print("El Paso is not in the list.")
-
-if "Arapahoe" in counties and "El Paso" in counties:
-    print("Both in list.")
-else:
-    print("Either one is not in the list.")
-
-if "Arapahoe" in counties or "El Paso" in counties:
-    print("One of them in the list.")
-else:
-    print("None of them in the list.")
-
- if "Arapahoe" in counties and "El Paso" not in counties:
-    print("Arpahoe is but El Paso isn't.")
-else:
-    ...
-
-#+end_src
-
-* Loops
-
-A single instruction that is repeated multiple times.
-#+begin_src python
-x = 0
-while x <= 3:
-    print(x)
-    x += 1
-#+end_src
-
-#+RESULTS:
-: 0
-: 1
-: 2
-: 3
-
-#+begin_src python
-numbers = [0, 1, 2, 3]
-for number in numbers:
-    print(number)
-
-print("Now with a range.")
-for n in range(4):
-    print(n)
-
-num_dict = {"a":0, "b":1, "c":2, "d":3}
-print("Now over dict keys.")
-for k in num_dict:
-    print(k, num_dict[k])
-#+end_src
-
-#+RESULTS:
-#+begin_example
-0
-1
-2
-3
-Now with a range.
-0
-1
-2
-3
-Now over dict keys.
-a 0
-b 1
-c 2
-d 3
-#+end_example
-
-** Iterating over Dictionaries
-
-#+begin_src python
-data = [{'county': 'Arapahoe', 'registered_voters': 422829}, {'county': 'Denver', 'registered_voters': 463353}, {'county': 'Jefferson', 'registered_voters': 432438}]
-for i in range(len(data)):
-    print(data[i]["county"])
-    print(data[i]["registered_voters"])
-#+end_src
-
-#+RESULTS:
-: Arapahoe
-: 422829
-: Denver
-: 463353
-: Jefferson
-: 432438
-
-* F-Strings and Printing
-
-Printing with f-strings
-#+begin_src python
-counties_dict = {"Arapahoe": 369237, "Denver":413229, "Jefferson": 390222}
-for county, voters in counties_dict.items():
-    print(f"{county} county has {voters} registered voters")
-#+end_src
-
-#+RESULTS:
-: Arapahoe county has 369237 registered voters
-: Denver county has 413229 registered voters
-: Jefferson county has 390222 registered voters
-
-Point decimals formatting.
-#+begin_src python
-candidate_votes = 313123
-total_votes = 1203920
-print(f"You received {candidate_votes / total_votes * 100:.2f}% of the total votes.")
-#+end_src
-
-#+RESULTS:
-: You received 26.01% of the total votes.
-
-
-
-
-* Footnotes
-
-[fn:3]https://docs.python.org/3.7/library/functions.html
-[fn:2]https://peps.python.org/pep-0008/
-
-[fn:1]https://en.wikipedia.org/wiki/Snake_case
+Python does a great job on removing a lot of obstacles in between us as the users and the computer, as it's really easy to generate working code starting from a solid pseudocode / algorithm. Even if it's not the fastest in processing the data, it's definitely the tool that can get the job done in the least amount of time once you learn it.
